@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./MainSection2.module.css";
 import logo from "../../assets/logo4.png";
+import { useState} from "react";
+
 function MainSection2(){
+    const [showDiv, setShowDiv] = useState(false);
+
+  
+
     return(
-        <div className={styles.MainSection2}>
+        <div className={`${styles.MainSection2} ${showDiv ? styles.show : ''}`}>
             <div className={styles.textgroup1}>
                 <div className={styles.textgroup1_1}>
                     <p className={styles.text1}>경기를 재밌게</p>

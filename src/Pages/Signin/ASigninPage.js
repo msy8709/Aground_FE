@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import CompanyInfo from "../../Components/Common/CompanyInfo";
-import Logo from "../../assets/logo5.png";
+import Logo from "../../assets/Logo1.png";
 import styles from "./ASigninPage.module.css";
 import TextInput from "../../Components/Common/TextInput";
 import { useState } from "react";
 import SelectGender from "../../Components/Common/SelectGender";
 import AgreeCheckbox from "../../Components/Common/AgreeCheckbox";
-
+import client from "../../Clients";
 
 function SigninPage(){
     const [inputValue, setInputValue] = useState('');
@@ -18,15 +18,33 @@ function SigninPage(){
         }
         setInputValue(value);
       };
+    
+    const handleSubmit = (event)=>{
+        event.prevent.default();
+    }
+
+    
+  const onClick = async () => {
+    client.get("api/assist/random-number/")
+    .then(response =>{
+        console.log(response.data.number);
+    })
+    .catch(error=>{
+        console.log(error);
+    })
+  };
     return(
         <div className={styles.backg}>
             <NavBar/>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className={styles.back}>
                     <div className={styles.block1}>
                         <img className={styles.icon} src={Logo}/>  
                         AGROUNDS로 회원가입
                     </div>
+                    <TextInput text="아이디" type="email" placeholder="(이메일)"/>
+                    <TextInput text="비밀번호" type="password" placeholder="비밀번호"/>
+                    <TextInput text="비밀번호 확인" type="password" placeholder="비밀번호 확인"/>
                     <div className={styles.block2}>
                         <div className={styles.name}>닉네임</div>
                         <input className={styles.input}type="text" placeholder="닉네임"></input>
@@ -41,7 +59,7 @@ function SigninPage(){
                     </div>
                     
                     <AgreeCheckbox color="#055540"/>
-                    <button className={styles.submit}>가입하기</button>
+                    <button type="submit"className={styles.submit}>가입하기</button>
                 </div>
             </form>
             <CompanyInfo/>
