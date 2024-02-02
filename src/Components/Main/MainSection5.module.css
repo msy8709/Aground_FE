@@ -181,13 +181,13 @@
             display: flex;
             background-color: #D7E19D;
             width: 100%;
-            height: 100vh;
+            height: 60vh;
             justify-content: center;
             align-items: center;
         }
         .img{
-            width: 74vh;
-            height: 74vh;
+            width: 32vh;
+            height: 32vh;
             box-shadow: 0vh 1vh 1vh#adadad;
             background-color:white;
             border-radius: 3vh;
@@ -195,29 +195,29 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-left: 8vh;
-            margin-right: -7vh;
+            margin-left: 4vh;
+            
         }
         .textgroup{
-            margin-right: 8vh;
+            margin-right: 4vh;
             text-align: right;
         }
         .text1{
-            font-size: 5vh;
+            font-size: 1.8vh;
             font-family: 'Inter Bold';
             font-weight: 800;
             color: #055540;
             margin:0
         }
         .text2{
-            font-size: 7vh;
+            font-size: 2.4vh;
             font-family: 'Inter Bold';
             font-weight: 700;
             margin:0 0 1vh 0;
             line-height: 1.3;
         }
         .text3{
-            font-size: 3vh;
+            font-size: 1.3vh;
             font-family: 'Inter Bold';
             font-weight: 700;
             color: #8F9194;
@@ -225,7 +225,7 @@
             line-height: 1.5;
         }
         .conf{
-            font-size: 3vh;
+            font-size: 1.3vh;
             font-family: 'Inter Bold';
             font-weight: 700;
             color: #055540;
@@ -239,13 +239,13 @@
             display: flex;
             background-color: #D7E19D;
             width: 100%;
-            height: 80vh;
+            height: 60vh;
             justify-content: center;
             align-items: center;
         }
         .img{
-            width: 48vh;
-            height: 48vh;
+            width: 32vh;
+            height: 32vh;
             box-shadow: 0vh 1vh 1vh#adadad;
             background-color:white;
             border-radius: 3vh;
@@ -253,29 +253,29 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-left: 8vh;
-            margin-right: -10vh;
+            margin-left: 4vh;
+            
         }
         .textgroup{
-            margin-right: 8vh;
+            margin-right: 4vh;
             text-align: right;
         }
         .text1{
-            font-size: 2.4vh;
+            font-size: 1.8vh;
             font-family: 'Inter Bold';
             font-weight: 800;
             color: #055540;
             margin:0
         }
         .text2{
-            font-size: 3vh;
+            font-size: 2.4vh;
             font-family: 'Inter Bold';
             font-weight: 700;
             margin:0 0 1vh 0;
             line-height: 1.3;
         }
         .text3{
-            font-size: 2vh;
+            font-size: 1.3vh;
             font-family: 'Inter Bold';
             font-weight: 700;
             color: #8F9194;
@@ -283,7 +283,7 @@
             line-height: 1.5;
         }
         .conf{
-            font-size: 1.5vh;
+            font-size: 1.3vh;
             font-family: 'Inter Bold';
             font-weight: 700;
             color: #055540;

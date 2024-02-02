@@ -41,12 +41,13 @@
     /* Portrait: 768px - 1023px */
     @media (min-width: 768px) and (max-width:1023px){
         .BackGround{
-            width: 250%;
-            height: 510vh;
+            width: 100%;
+            height: 380vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            overflow-x: hidden;
         }
         
     }
@@ -54,7 +55,7 @@
     @media (min-width: 1024px) and (max-width:1279px){
         .BackGround{
             width: 100%;
-            height: 430vh;
+            height: 370vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
