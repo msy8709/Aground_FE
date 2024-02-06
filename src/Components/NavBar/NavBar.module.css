@@ -104,7 +104,7 @@
     .NavBar{
         display: flex;
         justify-content: center;
-        margin-right: 10%;
+        margin-right: 30%;
     }
     .tag{
         font-size: 2vh;
