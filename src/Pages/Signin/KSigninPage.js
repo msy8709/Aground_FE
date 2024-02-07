@@ -8,6 +8,7 @@ function SigninPage(){
         display: "flex",
         justifyContent:"center"
     }
+    
     return(
         <div>
             <NavBar/>

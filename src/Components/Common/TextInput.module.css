@@ -1,10 +1,15 @@
-.block2{
+.block1{
     display: flex;
+    flex-direction: column;
+}
+.block2{
+    
     width: 49.2vh;
     height: 5.5vh;
     border-bottom: .15vh solid #CDCDCD;
+    display: flex;
     align-items: center;
-    margin-top: 3vh;
+    margin-top: 1vh;
 }
 
 .name{
@@ -27,4 +32,8 @@
     font-size: 2vh;
     font-weight: 600;
     color: #CDCDCD;
+}
+.errortext{
+    font-size: 1.5vh;
+    margin-left: 2vh;
 }

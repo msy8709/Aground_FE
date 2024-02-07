@@ -3,11 +3,13 @@ import NavBar from "../../Components/NavBar/NavBar";
 import CompanyInfo from "../../Components/Common/CompanyInfo";
 import Signin from "../../Components/Signin/Signin";
 import Google from "../../assets/Google.png";
+import { useState } from "react";
 function SigninPage(){
     const styles = {
         display: "flex",
         justifyContent:"center"
     }
+    
     return(
         <div>
             <NavBar/>

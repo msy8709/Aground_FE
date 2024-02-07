@@ -11,54 +11,75 @@ import client from "../../Clients";
 
 function SigninPage(){
     const [inputValue, setInputValue] = useState('');
-    const handleInputChange = (event) => {
-        let value = event.target.value;
-        if (value.length > 8) {
-          value = value.slice(0, 8);
-        }
-        setInputValue(value);
-      };
+    const [email, setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [confpassword,setConfpassword] = useState('');
+    const [nickname, setNickname] = useState('');
+    const [name, setName] = useState('');
+    const [birth,setBirth] = useState('');
+    const [gender, setGender] = useState('');
+    const [agree, setAgree] = useState('');
     
-    const handleSubmit = (event)=>{
-        event.prevent.default();
+    
+    const saveEmail = event => {
+        setEmail(event.target.value);
+        console.log(email)
     }
+    const savePassword = event => {
+        setPassword(event.target.value);
+        console.log(setPassword)
+    }
+    const saveConfpassword = event => {
+        setConfpassword(event.target.value);
+    }
+    const saveNickname = event => {
+        setNickname(event.target.value);
+        console.log(nickname)
+    }
+    const saveName = event => {
+        setName(event.target.value);
+    }
+    const saveBirth = event => {
+        setBirth(event.target.value);
+    }
+    const saveGender = event => {
+        setGender(event.target.value);
+    }
+    const saveAgree = event => {
+        setAgree(event.target.value);
+    }
+ 
+
+
 
     
-  const onClick = async () => {
-    client.get("api/assist/random-number/")
-    .then(response =>{
-        console.log(response.data.number);
-    })
-    .catch(error=>{
-        console.log(error);
-    })
-  };
+  
     return(
         <div className={styles.backg}>
             <NavBar/>
-            <form onSubmit={handleSubmit}>
+            <form >
                 <div className={styles.back}>
                     <div className={styles.block1}>
                         <img className={styles.icon} src={Logo}/>  
                         AGROUNDS로 회원가입
                     </div>
-                    <TextInput text="아이디" type="email" placeholder="(이메일)"/>
-                    <TextInput text="비밀번호" type="password" placeholder="비밀번호"/>
-                    <TextInput text="비밀번호 확인" type="password" placeholder="비밀번호 확인"/>
+                    <TextInput onChange={saveEmail}text="아이디" type="email" placeholder="(이메일)"/>
+                    <TextInput onChange={savePassword}text="비밀번호" type="password" placeholder="비밀번호"/>
+                    <TextInput onChange={saveConfpassword}text="비밀번호 확인" type="password" placeholder="비밀번호 확인"/>
                     <div className={styles.block2}>
                         <div className={styles.name}>닉네임</div>
-                        <input className={styles.input}type="text" placeholder="닉네임"></input>
+                        <input onChange={saveNickname}className={styles.input}type="text" placeholder="닉네임"></input>
                         <div className={styles.checkdup} >중복확인</div>
                     </div>
                     
-                    <TextInput text="이름" type="text" placeholder="실명"/>
-                    <TextInput text="생년월일" type="text" placeholder="8자리 (YYYYMMDD)" maxLength={8} pattern="\d*" onChange={handleInputChange}/>
+                    <TextInput onChange={saveName}text="이름" type="text" placeholder="실명"/>
+                    <TextInput onChange={saveBirth}text="생년월일" type="text" placeholder="8자리 (YYYYMMDD)" maxLength={8} pattern="\d*" />
                     
                     <div >
-                        <SelectGender color="#055540"/>
+                        <SelectGender onChange={saveGender}color="#055540"/>
                     </div>
                     
-                    <AgreeCheckbox color="#055540"/>
+                    <AgreeCheckbox onChange={saveAgree}color="#055540"/>
                     <button type="submit"className={styles.submit}>가입하기</button>
                 </div>
             </form>

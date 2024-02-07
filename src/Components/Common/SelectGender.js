@@ -6,6 +6,7 @@ function SelectGender({color}) {
 
   const handleGenderSelect = (gender) => {
     setSelectedGender(gender);
+    console.log(selectedGender)
   };
 
   return (
