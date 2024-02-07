@@ -49,7 +49,36 @@ function SigninPage(){
         setAgree(event.target.value);
     }
  
+    const signup = () => {
+        let user_info = {
+            'user_id' : 'jayou1223@gmail.com',
+            'user_pw' : '1q2w3e4r!',
+            'user_birth' : '20011223',
+            'user_name' : '구자유',
+            'user_gender' : 'male',
+            'user_nickname' : 'jayou',
+            'marketing_agree' : true
+        }
 
+        client.post('/api/login/signup/', user_info).then(function(res) {
+            console.log(res);
+        }).catch(function(err) {
+            console.log(err);
+        });
+    }
+
+    const login = () => {
+        let user_info = {
+            'user_id' : 'jayou1223@gmail.com',
+            'user_pw' : '1q2w3e4r!'
+        }
+
+        client.post('/api/login/login/', user_info).then(function(res) {
+            console.log(res);
+        }).catch(function(err) {
+            console.log(err);
+        });
+    }
 
 
     
@@ -63,24 +92,24 @@ function SigninPage(){
                         <img className={styles.icon} src={Logo}/>  
                         AGROUNDS로 회원가입
                     </div>
-                    <TextInput onChange={saveEmail}text="아이디" type="email" placeholder="(이메일)"/>
-                    <TextInput onChange={savePassword}text="비밀번호" type="password" placeholder="비밀번호"/>
-                    <TextInput onChange={saveConfpassword}text="비밀번호 확인" type="password" placeholder="비밀번호 확인"/>
+                    <TextInput changeFunction={setEmail} text="아이디" type="email" placeholder="(이메일)"/>
+                    <TextInput changeFunction={setPassword} text="비밀번호" type="password" placeholder="비밀번호"/>
+                    <TextInput changeFunction={setConfpassword} text="비밀번호 확인" type="password" placeholder="비밀번호 확인"/>
                     <div className={styles.block2}>
                         <div className={styles.name}>닉네임</div>
-                        <input onChange={saveNickname}className={styles.input}type="text" placeholder="닉네임"></input>
+                        <input onChange={saveNickname} className={styles.input}type="text" placeholder="닉네임"></input>
                         <div className={styles.checkdup} >중복확인</div>
                     </div>
                     
-                    <TextInput onChange={saveName}text="이름" type="text" placeholder="실명"/>
-                    <TextInput onChange={saveBirth}text="생년월일" type="text" placeholder="8자리 (YYYYMMDD)" maxLength={8} pattern="\d*" />
+                    <TextInput changeFunction={setName} text="이름" type="text" placeholder="실명"/>
+                    <TextInput changeFunction={setBirth} text="생년월일" type="text" placeholder="8자리 (YYYYMMDD)" maxLength={8} pattern="\d*" />
                     
-                    <div >
-                        <SelectGender onChange={saveGender}color="#055540"/>
+                    <div>
+                        <SelectGender changeFunction={setGender} color="#055540"/>
                     </div>
                     
-                    <AgreeCheckbox onChange={saveAgree}color="#055540"/>
-                    <button type="submit"className={styles.submit}>가입하기</button>
+                    <AgreeCheckbox changeFunction={setAgree} color="#055540"/>
+                    <button type="button"className={styles.submit} onClick={login}>가입하기</button>
                 </div>
             </form>
             <CompanyInfo/>
