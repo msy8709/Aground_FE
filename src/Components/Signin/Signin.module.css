@@ -71,6 +71,18 @@
     color: #979797;
     margin-left: 1vh;
 }
+.checkdup2{
+    width: 13.1vh;
+    height: 4.4vh;
+    text-align: center;
+    line-height: 4.5vh;
+    border-radius: 1vh;
+    font-family: "Inter Semi Bold";
+    font-size: 2vh;
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 1vh;
+}
 .genderBtn{
     border: none;
     width: 19.9vh;

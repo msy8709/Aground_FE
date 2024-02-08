@@ -7,7 +7,7 @@
 }
 .back{
     width:54vh;
-    height: 105.2vh;
+    height: 120.2vh;
     margin-top: 20vh;
     border-radius: 3vh;
     box-shadow: 1vh 1vh 3vh #979797;
@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     margin-top: 4vh;
-    margin-bottom: 1vh;
+    margin-bottom: 3vh;
 }
 .icon{
     width: 7vh;
@@ -36,9 +36,13 @@
     height: 5.5vh;
     border-bottom: .15vh solid #CDCDCD;
     align-items: center;
-    margin-top: 3vh;
+    
 }
-
+.block0{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+}
 .name{
     font-family: "Inter Semi Bold";
     font-size: 2vh;
@@ -72,6 +76,22 @@
     color: #979797;
     margin-left: 1vh;
     border: .2vh solid #055540;
+    margin-bottom: 1vh;
+}
+.checkdup2{
+    width: 13.1vh;
+    height: 4.4vh;
+    text-align: center;
+    line-height: 4.5vh;
+    border-radius: 1vh;
+    font-family: "Inter Semi Bold";
+    font-size: 2vh;
+    font-weight: 600;
+    background-color: #055540;
+    color: #ffffff;
+    margin-left: 1vh;
+    border: .2vh solid #055540;
+    margin-bottom: 1vh;
 }
 .genderBtn{
     border: none;
@@ -154,6 +174,24 @@ input[type="radio"] {
     cursor: pointer;
     background-color: #055540;
 }
+.submit2{
+    border: none;
+    width: 19.6vh;
+    height: 6.6vh;
+    color: white;
+    font-size: 2.4vh;
+    font-family: "Inter Bold";
+    font-weight: 600;
+    border-radius: 1vh;
+    margin-top: 4vh;
+    cursor: pointer;
+    background-color: #dadada;
+}
 a{
     text-decoration: none;
+}
+.errortext{
+    font-size: 1.5vh;
+    margin-left: 2vh;
+    margin-bottom: 1vh;
 }
