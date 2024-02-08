@@ -39,6 +39,7 @@ function SigninPage(){
 
     const saveNickname = event => {
         setNickname(event.target.value);
+        setIsDup('');
         const IsValidNickname = /^[a-zA-Z가-힣0-9!@#$%^&*()-_=+{};:,<.>]{3,10}$/.test(event.target.value)
         setIsNickname(IsValidNickname ? "1" : "0")
         if(IsValidNickname === ""){
