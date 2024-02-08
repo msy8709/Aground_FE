@@ -1,15 +1,13 @@
 import React from "react";
 import styles from "./TextInput.module.css";
-function TextInput({text, type, placeholder, errortext,color}){
-    const handleInputChange=(event)=>{
-        const inputValue = event.target.value;
-        console.log(inputValue);
-    }
+import { useState } from "react";
+function TextInput({text, type, placeholder,errortext, onChange,correcttext,isValid,value}){
+    
     return(
         <div className={styles.block1}>
             <div className={styles.block2}>
                     <div className={styles.name}>{text}</div>
-                    <input className={styles.input}type={type} onChange={handleInputChange}placeholder={placeholder}></input>
+                    <input className={styles.input}type={type} value={value}onChange={onChange}placeholder={placeholder}></input>
             </div>
             {isValid === "0" && (
                 <p className={styles.errortext} style={{ color: "red" }}>{errortext}</p>
