@@ -70,6 +70,7 @@
     font-weight: 600;
     color: #979797;
     margin-left: 1vh;
+    margin-bottom: 1vh;
 }
 .checkdup2{
     width: 13.1vh;
@@ -82,6 +83,8 @@
     font-weight: 600;
     color: #ffffff;
     margin-left: 1vh;
+    margin-bottom: 1vh;
+    cursor: pointer;
 }
 .genderBtn{
     border: none;
@@ -155,13 +158,26 @@ input[type="radio"] {
     border: none;
     width: 19.6vh;
     height: 6.6vh;
-    color: black;
+    color: white;
     font-size: 2.4vh;
     font-family: "Inter Bold";
     font-weight: 600;
     border-radius: 1vh;
     margin-top: 4vh;
     cursor: pointer;
+}
+.submit2{
+    border: none;
+    width: 19.6vh;
+    height: 6.6vh;
+    color: white;
+    font-size: 2.4vh;
+    font-family: "Inter Bold";
+    font-weight: 600;
+    border-radius: 1vh;
+    margin-top: 4vh;
+    cursor: pointer;
+    background-color: #dadada;
 }
 a{
     text-decoration: none;

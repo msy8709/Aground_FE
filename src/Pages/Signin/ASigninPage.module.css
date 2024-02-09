@@ -77,6 +77,7 @@
     margin-left: 1vh;
     border: .2vh solid #055540;
     margin-bottom: 1vh;
+    
 }
 .checkdup2{
     width: 13.1vh;
@@ -92,6 +93,7 @@
     margin-left: 1vh;
     border: .2vh solid #055540;
     margin-bottom: 1vh;
+    cursor: pointer;
 }
 .genderBtn{
     border: none;
