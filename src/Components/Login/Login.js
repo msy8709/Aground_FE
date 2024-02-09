@@ -5,7 +5,7 @@ import Kakao from "../../../src/assets/Kakao.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo5 from "../../assets/logo5.png";
-import SignupModal from "../Signin/SignupModal";
+import SignupModal from "../SignUp/SignupModal";
 import client from "../../Clients";
 
 function Login(props){

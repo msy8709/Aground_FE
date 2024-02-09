@@ -2,7 +2,7 @@ import styles from "./LoginPage.module.css";
 import Login from "../../Components/Login/Login";
 import NavBar from "../../Components/NavBar/NavBar";
 import CompanyInfo from "../../Components/Common/CompanyInfo";
-import SignupModal from "../../Components/Signin/SignupModal";
+import SignupModal from "../../Components/SignUp/SignupModal";
 function LoginPage(){
     return(
         <>

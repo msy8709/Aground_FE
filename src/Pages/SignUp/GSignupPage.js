@@ -1,8 +1,9 @@
 import React from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import CompanyInfo from "../../Components/Common/CompanyInfo";
-import Signin from "../../Components/Signin/Signin";
-import Kakao from "../../assets/Kakao.png";
+import Signin from "../../Components/SignUp/Signup";
+import Google from "../../assets/Google.png";
+import { useState } from "react";
 function SigninPage(){
     const styles = {
         display: "flex",
@@ -13,7 +14,7 @@ function SigninPage(){
         <div>
             <NavBar/>
             <div style={styles}>
-                <Signin text="카카오톡으" imgsrc={Kakao} color="#FEE502"/> 
+                <Signin text="구글" imgsrc={Google} color="#97BDFF"/> 
             </div>
             
             <CompanyInfo/>

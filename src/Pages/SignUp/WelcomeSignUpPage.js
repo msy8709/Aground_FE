@@ -1,6 +1,6 @@
 import NavBar from "../../Components/NavBar/NavBar";
 import styles from "./WelcomeSignupPage.module.css";
-import WelcomeSignUp from "../../Components/Signin/WelcomeSignup";
+import WelcomeSignUp from "../../Components/SignUp/WelcomeSignup";
 import CompanyInfo from "../../Components/Common/CompanyInfo";
 function WelcomeSignUpPage(){
     return (

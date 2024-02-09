@@ -8,7 +8,6 @@
             width: 100%;
             height: 11.25vh;
             align-items: center;
-            justify-content: center;
             background-color: #ffffff;
             margin-top: -1vh;
             border-bottom: .3vh solid #A7A9AC;
@@ -18,16 +17,17 @@
             width: 7.9vh;
             height: 7.8vh;
             margin-right: 5vh;
+            margin-left: 2vh;
         }
         .NavBar{
             display: flex;
             justify-content: center;
-            margin-right: 20%;
+            margin-right: 35%;
         }
-        .tag{
+        /* .tag{
             font-size: 2vh;
-            width: 11.1vh;
-            height:9vh;
+            width: 100%;
+            height:4vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -39,13 +39,50 @@
             
         }
         .tag:hover{
-            background-color:#245441;
             color: white;
             cursor: pointer;
-        }
-
-        .Login{
+            border-bottom: .4vh solid #245441;
+        } */
+        .tag {
             font-size: 2vh;
+            padding: 1.5vh 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 4vh;
+            font-family: 'Inter Extra Bold';
+            font-weight: 700;
+            writing-mode: horizontal-tb;
+            position: relative;
+            cursor: pointer;
+          }
+          
+          .tag:hover {
+            cursor: pointer;
+            transition: width 0.3s ease 1s, left 0.3s ease 1s;
+          }
+          
+          .tag:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: flex;
+            height: .4vh;
+            left: 50%;
+            position: absolute;
+            background: #245441;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+          }
+          
+          .tag:hover:after {
+            width: 150%;
+            left: calc(-20%);
+            
+          }
+        
+        .Login{
+            font-size: 1.8vh;
             text-align: center;
             cursor: pointer;
             font-family: 'Inter Extra Bold';
@@ -65,7 +102,7 @@
             background-color: rgb(124, 124, 124);
         }
         .Signin{
-            font-size: 2vh;
+            font-size: 1.8vh;
             text-align: center;
             margin-left: 2vh;
             font-family: 'Inter Extra Bold';
@@ -90,7 +127,7 @@
         width: 100%;
         height: 11.25vh;
         align-items: center;
-        justify-content: center;
+        
         background-color: #ffffff;
         margin-top: -1vh;
         border-bottom: .3vh solid #A7A9AC;
@@ -99,35 +136,72 @@
     .Logo{
         width: 7.9vh;
         height: 7.8vh;
-        margin-right: 5vh;
+        margin-right: 3vh;
+        margin-left: 2vh;
     }
     .NavBar{
         display: flex;
         justify-content: center;
         margin-right: 30%;
     }
-    .tag{
+    /* .tag{
         font-size: 2vh;
-        width: 9.1vh;
-        height:9vh;
+        padding: 1vh .2vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding-left: 2vh;
-        padding-right: 2vh; 
+        margin: 0 4vh;
         font-family: 'Inter Extra Bold';
         font-weight: 700;
         writing-mode: horizontal-tb;
-        
     }
     .tag:hover{
-        background-color:#245441;
-        color: white;
         cursor: pointer;
-    }
+        border-bottom: .5vh solid #245441;
+        transition: width 0.3s ease 1s,left .3s ease 1s;
+
+    } */
+    .tag {
+        font-size: 2vh;
+        padding: 1.5vh 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 4vh;
+        font-family: 'Inter Extra Bold';
+        font-weight: 700;
+        writing-mode: horizontal-tb;
+        position: relative;
+        cursor: pointer;
+      }
+      
+      .tag:hover {
+        cursor: pointer;
+        transition: width 0.3s ease 1s, left 0.3s ease 1s;
+      }
+      
+      .tag:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: flex;
+        height: .4vh;
+        left: 50%;
+        position: absolute;
+        background: #245441;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      
+      .tag:hover:after {
+        width: 150%;
+        left: calc(-20%);
+        
+      }
+    
 
     .Login{
-        font-size: 2vh;
+        font-size: 1.8vh;
         text-align: center;
         cursor: pointer;
         font-family: 'Inter Extra Bold';
@@ -147,7 +221,7 @@
         background-color: rgb(124, 124, 124);
     }
     .Signin{
-        font-size: 2vh;
+        font-size: 1.8vh;
         text-align: center;
         margin-left: 2vh;
         font-family: 'Inter Extra Bold';
@@ -174,7 +248,6 @@
         width: 100%;
         height: 11.25vh;
         align-items: center;
-        justify-content: center;
         background-color: #ffffff;
         margin-top: -1vh;
         border-bottom: .3vh solid #A7A9AC;
@@ -183,14 +256,15 @@
     .Logo{
         width: 7.9vh;
         height: 7.8vh;
-        margin-right: 5vh;
+        margin-right: 3vh;
+        margin-left: 2vh;
     }
     .NavBar{
         display: flex;
         justify-content: center;
-        margin-right: 10%;
+        margin-right: 28%;
     }
-    .tag{
+    /* .tag{
         font-size: 2vh;
         width: 9.1vh;
         height:9vh;
@@ -208,10 +282,47 @@
         background-color:#245441;
         color: white;
         cursor: pointer;
-    }
-
+    } */
+    .tag {
+        font-size: 1.5vh;
+        padding: 1.5vh 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 4vh;
+        font-family: 'Inter Extra Bold';
+        font-weight: 700;
+        writing-mode: horizontal-tb;
+        position: relative;
+        cursor: pointer;
+      }
+      
+      .tag:hover {
+        cursor: pointer;
+        transition: width 0.3s ease 1s, left 0.3s ease 1s;
+      }
+      
+      .tag:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: flex;
+        height: .4vh;
+        left: 50%;
+        position: absolute;
+        background: #245441;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      
+      .tag:hover:after {
+        width: 150%;
+        left: calc(-20%);
+        
+      }
+    
     .Login{
-        font-size: 2vh;
+        font-size: 1.3vh;
         text-align: center;
         cursor: pointer;
         font-family: 'Inter Extra Bold';
@@ -231,7 +342,7 @@
         background-color: rgb(124, 124, 124);
     }
     .Signin{
-        font-size: 2vh;
+        font-size: 1.3vh;
         text-align: center;
         margin-left: 2vh;
         font-family: 'Inter Extra Bold';
@@ -261,7 +372,6 @@
             width: 100%;
             height: 8.25vh;
             align-items: center;
-            justify-content: center;
             background-color: #ffffff;
             margin-top: -1vh;
             border-bottom: .3vh solid #A7A9AC;
@@ -275,10 +385,10 @@
         .NavBar{
             display: flex;
             justify-content: center;
-           margin-right: 4%;
+           margin-right: 20%;
             margin-left: 2vh;
         }
-        .tag{
+        /* .tag{
             font-size: 1.2vh;
             width: 5vh;
             height:6vh;
@@ -296,10 +406,47 @@
             background-color:#245441;
             color: white;
             cursor: pointer;
-        }
-    
+        } */
+        .tag {
+            font-size: 1vh;
+            padding: 1.5vh 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 2vh;
+            font-family: 'Inter Extra Bold';
+            font-weight: 700;
+            writing-mode: horizontal-tb;
+            position: relative;
+            cursor: pointer;
+          }
+          
+          .tag:hover {
+            cursor: pointer;
+            transition: width 0.3s ease 1s, left 0.3s ease 1s;
+          }
+          
+          .tag:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: flex;
+            height: .4vh;
+            left: 50%;
+            position: absolute;
+            background: #245441;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+          }
+          
+          .tag:hover:after {
+            width: 150%;
+            left: calc(-20%);
+            
+          }
+        
         .Login{
-            font-size: 1.3vh;
+            font-size: .9vh;
             text-align: center;
             cursor: pointer;
             font-family: 'Inter Extra Bold';
@@ -319,7 +466,7 @@
             background-color: rgb(124, 124, 124);
         }
         .Signin{
-            font-size: 1.3vh;
+            font-size: .9vh;
             text-align: center;
             margin-left: 1vh;
             font-family: 'Inter Extra Bold';
@@ -347,7 +494,6 @@
             width: 100%;
             height: 8.25vh;
             align-items: center;
-            justify-content: center;
             background-color: #ffffff;
             margin-top: -1vh;
             border-bottom: .3vh solid #A7A9AC;
@@ -361,10 +507,10 @@
         .NavBar{
             display: flex;
             justify-content: center;
-           margin-right: 4%;
+           margin-right: 20%;
             margin-left: 2vh;
         }
-        .tag{
+        /* .tag{
             font-size: 1.1vh;
             width: 4.2vh;
             height:6vh;
@@ -382,10 +528,48 @@
             background-color:#245441;
             color: white;
             cursor: pointer;
-        }
+        } */
+        .tag {
+            font-size: 1.1vh;
+            padding: 1.5vh 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 2vh;
+            font-family: 'Inter Extra Bold';
+            font-weight: 700;
+            writing-mode: horizontal-tb;
+            position: relative;
+            cursor: pointer;
+          }
+          
+          .tag:hover {
+            cursor: pointer;
+            transition: width 0.3s ease 1s, left 0.3s ease 1s;
+          }
+          
+          .tag:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: flex;
+            height: .4vh;
+            left: 50%;
+            position: absolute;
+            background: #245441;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+          }
+          
+          .tag:hover:after {
+            width: 150%;
+            left: calc(-20%);
+            
+          }
+        
     
         .Login{
-            font-size: 1.3vh;
+            font-size: 1.1vh;
             text-align: center;
             cursor: pointer;
             font-family: 'Inter Extra Bold';
@@ -405,7 +589,7 @@
             background-color: rgb(124, 124, 124);
         }
         .Signin{
-            font-size: 1.3vh;
+            font-size: 1.1vh;
             text-align: center;
             margin-left: 1vh;
             font-family: 'Inter Extra Bold';

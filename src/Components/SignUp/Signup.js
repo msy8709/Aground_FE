@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Signin.module.css";
+import styles from "./Signup.module.css";
 import TextInput from "../Common/TextInput";
 import SelectGender from "../Common/SelectGender";
 import AgreeCheckbox from "../Common/AgreeCheckbox";

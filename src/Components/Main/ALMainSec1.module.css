@@ -88,39 +88,7 @@
     margin-left: 28%;
 }
 
-.rankgroup{
-    width: 48vh;
-    height: 48vh;
-    box-shadow: 0vh 1vh 1vh#d1d1d1;
-    background-color: white;
-    border-radius: 3vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 10vh;
-    margin-top: 10vh;
-}
-.text5{
-    font-size: 3vh;
-    font-family: "Inter Bold";
-    font-weight: 600;
-    color:#D93637;
-    margin: 0;
-}
-.text6{
-    font-size: 2.5vh;
-    font-family: "Inter Bold";
-    font-weight: 600;
-    color:#2E2E2E;
-}
-.text7{
-    font-size: 3.6vh;
-    font-family: "Inter Bold";
-    font-weight: 700;
-    color:#055540;
-}
+
 
 
 

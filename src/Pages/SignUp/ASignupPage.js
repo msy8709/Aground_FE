@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import CompanyInfo from "../../Components/Common/CompanyInfo";
 import Logo from "../../assets/Logo1.png";
-import styles from "./ASigninPage.module.css";
+import styles from "./ASignupPage.module.css";
 import TextInput from "../../Components/Common/TextInput";
 import { useState } from "react";
 import SelectGender from "../../Components/Common/SelectGender";

@@ -45,38 +45,7 @@
             margin: 0;
             line-height: 1.5;
         }
-        .rankgroup{
-            width: 48vh;
-            height: 48vh;
-            box-shadow: 0vh 1vh 1vh#d1d1d1;
-            background-color: white;
-            border-radius: 3vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-left: 10vh;
-            cursor: pointer;
-            
-        }
-        .text5{
-            font-size: 3.2vh;
-            font-family: "Inter Bold";
-            font-weight: 600;
-            color:#D93637;
-        }
-        .text6{
-            font-size: 3.2vh;
-            font-family: "Inter Bold";
-            font-weight: 600;
-            color:#2E2E2E;
-        }
-        .text7{
-            font-size: 5vh;
-            font-family: "Inter Bold";
-            font-weight: 700;
-            color:#055540;
-        }
+        
     }
     @media (min-width:1440px) and (max-width: 1919px){
         .Block1{
