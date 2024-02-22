@@ -1,0 +1,57 @@
+@import '../../../../assets/font/font.css';
+.name1{
+    font-family: 'Inter Semi Bold';
+    font-weight: 700;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+    margin-top: -3vw;
+}
+.name2{
+    font-family: 'Inter Semi Bold';
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #979797;
+    margin-top: 0;
+}
+.name3{
+    font-family: 'Inter Semi Bold';
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #979797;
+    margin-top: 0;
+}
+.box{
+    width: 50%;
+    height: 3vw;
+    border-bottom: .1vw solid #979797;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    width: 80%;
+    height: 2vw;
+    border: none;
+    font-size: 1.2vw;
+    font-family: 'Inter Semi Bold';
+}
+.input::placeholder{
+    font-size: 1.3vw;
+    font-family: 'Inter Semi Bold';
+    color: #CDCDCD;
+    outline: none;
+    text-align: center;
+}
+.select{
+    width: 7vw;
+    height: 3vw;
+    background-color: #055540;
+    color: white;
+    font-family: 'Inter Bold';
+    font-size: 1.3vw;
+    text-align: center;
+    line-height: 3vw;
+    border-radius: .7vw;
+    margin-top: 1vw;
+}

@@ -14,6 +14,9 @@ import GamePage from "./Pages/SubPage/GamePage";
 import LeaguePage from "./Pages/SubPage/LeaguePage";
 import PlayerPage from "./Pages/SubPage/PlayerPage";
 import TeamPage from "./Pages/SubPage/TeamPage";
+import MakeLeaguePage from "./Pages/SubPage/MakeLeaguePage";
+import MakeLeagueConf from "../src/Components/Sub/League/MakeLeague/MakeLeagueConf";
+
 function App() {
   return(
     <BrowserRouter>
@@ -37,6 +40,9 @@ function App() {
         <Route path="/PlayerPage" element={<PlayerPage/>} />
         <Route path="/WelcomeSignUpPage" element={<WelcomeSignUpPage />} />
         <Route path="/TeamPage" element={<TeamPage />} />
+        <Route path="/MakeLeaguePage" element={<MakeLeaguePage />} />
+        <Route path="/MakeLeagueConf" element={<MakeLeagueConf />} />
+        
       </Routes>
     </BrowserRouter>
     

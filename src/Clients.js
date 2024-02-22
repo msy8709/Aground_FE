@@ -1,3 +1,3 @@
 import axios from "axios";
-const client = axios.create({baseURL: "http://43.202.89.97:59988/"});
+const client = axios.create({baseURL: "https://agrounds.com/"});
 export default client

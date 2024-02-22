@@ -5,6 +5,7 @@ import SelectGender from "../Common/SelectGender";
 import AgreeCheckbox from "../Common/AgreeCheckbox";
 import { useEffect } from "react";
 import client from "../../Clients";
+import { redirect } from "react-router-dom";
 
 function Signin({color,text,imgsrc}){
     const [nickname, setNickname] = useState('');
@@ -19,7 +20,7 @@ function Signin({color,text,imgsrc}){
     const [isName,setIsName] = useState('');
     const [isBirth,setIsBirth] = useState('');
     const [isDup,setIsDup] = useState('');
-
+    
     
     let isAgree = privacyAgree && termsAgree;
     let isAllValid = isDup && isName && isBirth && isAgree;
@@ -72,6 +73,7 @@ function Signin({color,text,imgsrc}){
         client.post('/api/login/signup/',SignUpData)
         .then(function(response){
             console.log(response)
+            return <redirect to="/WelcomeSignupPage"/>
         })
         .catch(function(error){
             console.log(error);

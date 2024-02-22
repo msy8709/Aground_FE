@@ -15,6 +15,8 @@ function Login(props){
     const [isid,setIsid] = useState('');
     const [isPassword,setIsPassword] = useState('');
     const [isLogin,setIsLogin] = useState('')
+    const [token, setToken] = useState('');
+    const [Logined, setIsLogined] = useState('');
     const navigate = useNavigate();
     const ModalOpen=()=>{
         setIsOpen(true);
@@ -38,13 +40,15 @@ function Login(props){
         e.preventDefault();
         const loginData = {
             'user_id':userid,
-            'user_pw': userpw
+            'password': userpw
         }
         client.post('/api/login/login/', loginData)
         .then(function(response){
-                sessionStorage.setItem('nickname', response.data.user_nickname);
-                console.log(response.data.user_nickname);
-                navigate('/ALMainPage');
+            console.log(response)
+            setToken(response.data.token)
+            sessionStorage.setItem('nickname', response.data.user_nickname);
+            sessionStorage.setItem('token', response.data.token)
+            navigate('/ALMainPage');
         })
         .catch(function(error){
             setIsLogin(false);

@@ -1,0 +1,28 @@
+@import '../../../../assets/font/font.css';
+.name1{
+    font-family: 'Inter Semi Bold';
+    font-weight: 700;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+    margin-top: -7vw;
+}
+.name2{
+    font-family: 'Inter Semi Bold';
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #979797;
+    margin-top: 0;
+}
+.name3{
+    font-family: 'Inter Semi Bold';
+    font-weight: 700;
+    font-size: 1.5vw;
+    color: #979797;
+    margin-top: 0;
+}
+.selectbox{
+    width: 10vw;
+    height: 2vw;
+    border: .1vw solid #979797 ;
+    font-size: 1vw;
+}
