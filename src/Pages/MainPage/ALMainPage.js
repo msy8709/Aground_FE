@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 function ALMainPage(){
     const token = new URL(window.location.href).searchParams.get('token')
     console.log(token)
+    sessionStorage.setItem()
     return(
         <div>
             <ALNavBar />

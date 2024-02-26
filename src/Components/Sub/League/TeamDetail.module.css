@@ -1,0 +1,172 @@
+.back0{
+    width: 100%;
+    height: 65vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.back{
+    width:70%;
+    height:40vw;
+    background-color: #F8F8F8;
+    border-radius: 1vw;
+    box-shadow: 0vw .5vw .5vw rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10vw;
+    align-items: center;
+}
+.teamrank{
+    width:60%;
+    height: 12vw;
+}
+.path{
+    font-family: 'Inter Bold';
+    font-size: .6vw;
+    color: #6E6E6E;
+    margin-left: 3vw;
+    margin-bottom: 2vw;
+}
+.contentbox{
+    display: flex;
+    align-items: center;
+}
+.profile{
+    width: 8vw;
+    height: 8vw;
+    margin:0 2vw
+}
+.textbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.FCname{
+    font-family: 'Inter Bold';
+    font-size: 2vw;
+    color: black;
+    font-weight: 700;
+    margin-bottom: .4vw;
+}
+.textbox0{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textbox{
+    display: flex;
+    flex-direction: row;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .9vw
+}
+.text1{
+    font-family: 'Inter Bold';
+    font-size: .7vw;
+    color: #6E6E6E;
+    font-weight: 600;
+    margin: .2vw 0;
+}
+.text2{
+    font-family: 'Inter Bold';
+    font-size: 1.5vw;
+    color: black;
+    font-weight: 700;
+    margin: .2vw 0;
+}
+.table{
+    width:55%;
+    height:2vw;
+}
+.thead{
+    border-bottom: .2vw solid #055540;
+}
+.tr{
+    width: 88%;
+    height: 2vw;
+}
+.thead1,.thead2,.thead3,.thead4,.thead5,.thead6,.thead7,.thead8,.thead9,.thead10{
+    font-family: 'Inter Bold';
+    font-size: .8vw;
+    font-weight: 800;
+    color: #6E6E6E;
+    border-bottom: 2px solid #000000;
+}
+
+.thead1{
+    padding: 0 1vw;
+    
+}
+.thead2{
+    padding: 0 4vw;
+    
+}
+.thead3{
+    padding: 0 1vw;
+}
+.thead4{
+    padding: 0 1vw;
+}
+.thead5{
+    padding: 0 1vw;
+}
+.thead6{
+    padding: 0 1vw;
+}
+.thead7{
+    padding: 0 1vw;
+}
+.thead8{
+    padding: 0 1vw;
+}
+.thead9{
+    padding: 0 1.5vw;
+}
+.thead10{
+    padding: 0 2vw;
+}
+.td,.td1{
+    text-align: center;
+    height: 2vw;
+    border-bottom: 2px solid #D9D9D9;
+    margin: 0;
+    font-family: 'Inter Bold';
+    font-size: .8vw;
+    font-weight: 800;
+}
+.td1{
+    font-family: 'Inter Bold';
+    font-size: .8vw;
+    font-weight: 800;
+
+}
+.teammember{
+    display: flex;
+    flex-direction: column;
+}
+.contentbox1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: .2vw solid black;
+    width: 40%;
+    height: 12vw;
+}
+.positionbox{
+    display: flex;
+}
+.position{
+    width: 10vw;
+    height:8vw;
+    background-color: #D9D9D9;
+}
+.contentbox3{
+    display: flex;
+    flex-direction: column;
+}
