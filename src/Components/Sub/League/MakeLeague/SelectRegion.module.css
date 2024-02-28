@@ -4,7 +4,7 @@
     font-weight: 700;
     font-size: 2vw;
     margin-bottom: 1vw;
-    margin-top: -7vw;
+    margin-top: -2vw;
 }
 .name2{
     font-family: 'Inter Semi Bold';
@@ -25,4 +25,16 @@
     height: 2vw;
     border: .1vw solid #979797 ;
     font-size: 1vw;
+    margin-top: 3vw;
+}.select{
+    width: 6vw;
+    height: 2.3vw;
+    background-color: #055540;
+    color: white;
+    font-family: 'Inter Bold';
+    font-size: 1.1vw;
+    text-align: center;
+    line-height: 2.5vw;
+    border-radius: .7vw;
+    margin-top: 3vw;
 }

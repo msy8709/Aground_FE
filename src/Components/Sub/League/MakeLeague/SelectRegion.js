@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./SelectRegion.module.css";
-import { useState } from "react";
+import { useState} from "react";
 function SelectRegion(props){
     const [selectregion, setSelectregion] = useState('지역선택');
+    const [isClicked,setIsClicked] = useState(false)
     const handleChange = (event) => {
         setSelectregion(event.target.value)
+        console.log(event.target.value)
     }
+    useEffect(()=>{
+        {selectregion ==='지역선택' ?setIsClicked(false):setIsClicked(true)}
+    },[selectregion])
     return (
         <>
-            <p className={styles.name1}>{props.name} 생성하기</p>
-            <p className={styles.name2}>STEP 3. 리그에 대한 정보가 필요해요 !</p>
-            <p className={styles.name3}>리그 지역을 설정해주세요.</p>
+            <p className={styles.name1}>{props.name} 리그 생성하기</p>
+            <p className={styles.name2}>STEP 4. 리그를 진행할 지역범위를 설정해 주세요.</p>
+
             <select className={styles.selectbox}value='option' onChange={handleChange}>
                 <option value="지역선택">{selectregion}</option>
                 <option value="서울특별시">서울특별시</option>
@@ -32,7 +37,7 @@ function SelectRegion(props){
                 <option value="제주특별자치도">제주특별자치도</option>
 
             </select>
-            
+            {isClicked?<div onClick={props.handleStep}className={styles.select}>다음</div>:<div className={styles.select}>다음</div>}
       
     
             
