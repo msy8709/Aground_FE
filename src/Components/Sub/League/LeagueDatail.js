@@ -126,7 +126,7 @@ export default function LeagueDetail(props){
                                 <div className={styles.uptextbox}>
                                     <div className={styles.textbox}>
                                     <img src={props.src}/><p className={styles.text4}>메시아 FC</p><p className={styles.text5}>3</p></div>
-                                    <div className={styles.textbox}><img src={props.src}/><p className={styles.text4}>디딤돌 FC</p><p className={styles.text5}>3</p></div>
+                                    <div className={styles.textbox}><img className={styles.profile} src={props.src}/><p className={styles.text4}>디딤돌 FC</p><p className={styles.text5}>3</p></div>
                                     </div>  
                                     <p className={styles.text6}>1.12 (수)</p>
                                 

@@ -14,7 +14,7 @@ function MakeLeagueConf(){
         setNickname(isNickname)
     }
     const gotoMain=()=>{
-        navigate('/AL   MainPage')
+        navigate('/ALMainPage')
     }
     return(
         <div className={styles.back1}>

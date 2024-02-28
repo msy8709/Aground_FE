@@ -12,13 +12,15 @@ import DirectorPage from "./Pages/SubPage/Director/DirectorPage";
 import EquipmentPage from "./Pages/SubPage/EquipmentPage";
 import GamePage from "./Pages/SubPage/GamePage";
 import LeaguePage from "./Pages/SubPage/League/LeaguePage";
-import PlayerPage from "./Pages/SubPage/PlayerPage";
-import TeamPage from "./Pages/SubPage/TeamPage";
+import PlayerPage from "./Pages/SubPage/Player/PlayerPage";
+import TeamPage from "./Pages/SubPage/Team/TeamPage";
 import MakeLeaguePage from "./Pages/SubPage/League/MakeLeaguePage";
 import MakeLeagueConf from "../src/Components/Sub/League/MakeLeague/MakeLeagueConf";
 import LeagueByRegion from "./Components/Sub/League/LeagueByRegion";
 import LeagueDetailPage from "./Pages/SubPage/League/LeagueDetailPage";
 import TeamDetailPage from "./Pages/SubPage/League/TeamDetailPage";
+import TeamByRegionPage from "./Pages/SubPage/Team/TeamByRegionPage";
+import RegionTeamPage from "./Pages/SubPage/Team/RegionTeamPage";
 function App() {
   return(
     <BrowserRouter>
@@ -47,6 +49,8 @@ function App() {
         <Route path="/LeagueByRegion" element={<LeagueByRegion />} />
         <Route path="/LeagueDetailPage" element={<LeagueDetailPage />} />
         <Route path="/TeamDetailPage" element={<TeamDetailPage />} />
+        <Route path="/TeamByRegionPage" element={<TeamByRegionPage />} />
+        <Route path="/RegionTeamPage" element={<RegionTeamPage />} />
       </Routes>
     </BrowserRouter>
     

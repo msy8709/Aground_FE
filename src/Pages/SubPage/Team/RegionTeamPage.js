@@ -1,4 +1,5 @@
-import styles from "./LeaguePage.module.css"
+
+import styles from "./TeamPage.module.css"
 import NavBar from "../../../Components/NavBar/NavBar";
 import CompanyInfo from "../../../Components/Common/CompanyInfo";
 import ALNavBar from "../../../Components/NavBar/ALNavBar";
@@ -12,20 +13,20 @@ import plus from "../../../assets/plusIcon.png";
 import { useNavigate } from "react-router-dom";
 import arrow from "../../../assets/Arrow.png";
 
-function LeaguePage(){
+function RegionTeamPage(){
     const [nickname,setNickname] = useState();
     const [state, setState] = useState();
     const [color, setColor] = useState();
     const navigate = useNavigate();
 
     const goRegion = () => {
-        navigate('/LeagueByRegion');
+        navigate('/TeamByRegionPage');
     }
     const makeLeague = () => {
         navigate('/MakeLeaguePage');
     }
-    const LeagueDetail = () => {
-        navigate('/LeagueDetailPage');
+    const RegionDetail = () => {
+        navigate('/TeamByRegionPage');
     }
     useEffect(()=>{
         const isNickname = sessionStorage.getItem('nickname');
@@ -44,43 +45,45 @@ function LeaguePage(){
         }
     }
     
+    
     return(
         <div>
             {nickname ? <ALNavBar/> : <NavBar/>}
-            {/* <League/> */}
             <div className={styles.back}>
                 <div className={styles.othercontents}></div>
                 <div className={styles.sortbox}>
                     <div className={styles.searchbox}><img src={dodbogi}/><input className={styles.search}type="text"/></div>
                     <select onClick={stateSelect}name="state" className={styles.sort}>
-                        <option className={styles.sort}>리그 상태<img className={styles.dropicon}src={plus}/></option>
-                        <option value="모집중">모집중</option>
-                        <option value="진행중">진행중</option>
-                        <option value="종료">종료</option>
+                    <option className={styles.sort}>티어<img className={styles.dropicon}src={plus}/></option>
+                        <option value="브론즈">브론즈</option>
+                        <option value="실버">실버</option>
+                        <option value="플래티넘">플래티넘</option>
+                        <option value="다이아">다이아</option>
+                        <option value="마스터">마스터</option>
                         </select>
                 </div>
                 <div className={styles.contentbox}>
                     <div className={styles.leaguebox}>
                         <div className={styles.textgroup2}>
                         <div className={styles.textgroup}>
-                            <p className={styles.text1}>전체</p>
-                            <p className={styles.text2}>리그 & 컵</p>
+                            <p className={styles.text1}>팀</p>
+                            <p className={styles.text2}>인천광역시</p>
                         </div>
                         <div className={styles.region} onClick={goRegion}>지역별 리그 ></div>
                         </div>
                         <table className={styles.table}>
                             <thead tr className={styles.thead}>
                                 <tr className={styles.tr}>
-                                    <th className={styles.thead1}>평균 티어</th>
-                                    <th className={styles.thead2}>리그</th>
-                                    <th className={styles.thead3}>종류</th>
-                                    <th className={styles.thead4}>참가팀 수</th>
-                                    <th className={styles.thead5}>상태</th>
-                                    <th className={styles.thead6}>시작일</th>
+                                    <th className={styles.thead1}>티어</th>
+                                    <th className={styles.thead2}>팀이름</th>
+                                    <th className={styles.thead3}>지역</th>
+                                    <th className={styles.thead4}>선수 수</th>
+                                    <th className={styles.thead5}>평균연령</th>
+                                    <th className={styles.thead6}>최근 경기일</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr onClick={LeagueDetail}className={styles.tr2}>
+                                <tr onClick={RegionDetail}className={styles.tr2}>
                                     <td className={styles.td}>브론즈</td>
                                     <td className={styles.td}>인천 미추홀구 리그</td>
                                     <td className={styles.td}>일반 리그</td>
@@ -174,7 +177,7 @@ function LeaguePage(){
                         </table>
                         <div className={styles.contentpages}><img src={arrow} className={styles.arrowl}/><p className={styles.pages}>1</p><img src={arrow} className={styles.arrow}/></div>
                        </div>
-                       <div className={styles.makeLeague} onClick={makeLeague}><p className={styles.plus}>+</p>리그 만들기</div>
+                       <div className={styles.makeLeague} ><p className={styles.plus}>+</p>리그 만들기</div>
                 </div>
                 
             </div>
@@ -182,4 +185,4 @@ function LeaguePage(){
         </div>
     )
 }
-export default LeaguePage;
+export default RegionTeamPage;
