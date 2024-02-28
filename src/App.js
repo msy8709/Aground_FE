@@ -8,7 +8,7 @@ import GSigninPage from "./Pages/SignUp/GSignupPage";
 import ASigninPage from "./Pages/SignUp/ASignupPage";
 import ALMainPage from "./Pages/MainPage/ALMainPage";
 import WelcomeSignUpPage from "./Pages/SignUp/WelcomeSignUpPage";
-import DirectorPage from "./Pages/SubPage/DirectorPage";
+import DirectorPage from "./Pages/SubPage/Director/DirectorPage";
 import EquipmentPage from "./Pages/SubPage/EquipmentPage";
 import GamePage from "./Pages/SubPage/GamePage";
 import LeaguePage from "./Pages/SubPage/League/LeaguePage";

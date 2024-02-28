@@ -7,9 +7,9 @@ import ALMainSec3 from "../../Components/Main/ALMainSec3";
 import testsrc from "../../assets/Logo2.png";
 import { useEffect, useState } from "react";
 function ALMainPage(){
-    const token = new URL(window.location.href).searchParams.get('token')
+    const token = new URL(window.location.href).searchParams.get('code')
     console.log(token)
-    sessionStorage.setItem()
+    sessionStorage.setItem('token', token)
     return(
         <div>
             <ALNavBar />

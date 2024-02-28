@@ -34,7 +34,7 @@ function Login(props){
     }
 
     const onKakaoClick = (e) => {
-        window.location.replace("http://43.202.89.97:59988/api/login/kakao");
+        window.location.replace(process.env.REACT_APP_BASE_URL+"/api/login/kakao");
     }
     const onAgrooundClick = (e) => {
         e.preventDefault();

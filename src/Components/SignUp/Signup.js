@@ -24,6 +24,7 @@ function Signin({color,text,imgsrc}){
     
     let isAgree = privacyAgree && termsAgree;
     let isAllValid = isDup && isName && isBirth && isAgree;
+    let user_id = new URL(window.location.href).searchParams.get('id');
 
     useEffect(() => {
         setAllAgree(privacyAgree && termsAgree && marketingAgree)
@@ -62,6 +63,7 @@ function Signin({color,text,imgsrc}){
         event.preventDefault();
 
         let SignUpData = {
+            'user_id' : user_id,
             'user_birth' : birth,
             'user_name' : name,
             'user_gender' : gender,
@@ -70,7 +72,7 @@ function Signin({color,text,imgsrc}){
 
         }
         console.log(SignUpData);
-        client.post('/api/login/signup/',SignUpData)
+        client.post('/api/login/kakao/signup/',SignUpData)
         .then(function(response){
             console.log(response)
             return <redirect to="/WelcomeSignupPage"/>
