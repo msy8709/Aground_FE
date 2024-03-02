@@ -5,14 +5,12 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Navigate, useNavigate } from "react-router-dom";
 function SelectGetDate(props){
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
     const navigate = useNavigate();
     const [isClicked,setIsClicked] = useState(false);
     
     useEffect(()=>{
-        {startDate < endDate?setIsClicked(true):setIsClicked(false)}
-    },[startDate,endDate])
+        {props.startJoin < props.endJoin?setIsClicked(true):setIsClicked(false)}
+    },[props.startJoin,props.endJoin])
     const lastStep=()=>{
         navigate('/MakeLeagueConf');
     }
@@ -25,17 +23,17 @@ function SelectGetDate(props){
             <DatePicker 
                 className={styles.date1}
                 dateFormat="yyyy.MM.dd"
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}/>
+                selected={props.startJoin}
+                onChange={(date) => props.setStartJoin(date)}/>
                 -
             <DatePicker 
                 className={styles.date2}
                 dateFormat="yyyy.MM.dd"
-                selected={endDate}
-                endDate={endDate}
-                onChange={(date) => setEndDate(date)}/>
+                selected={props.endJoin}
+                endDate={props.endJoin}
+                onChange={(date) => props.setEndJoin(date)}/>
             </div>
-            {isClicked?<div className={styles.select} onClick={lastStep}>다음</div>:<div className={styles.select} >다음</div>}
+            {isClicked?<div className={styles.select} onClick={props.handleStep}>다음</div>:<div className={styles.select} >다음</div>}
         </>
     )
 }

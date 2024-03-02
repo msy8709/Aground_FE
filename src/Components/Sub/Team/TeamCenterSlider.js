@@ -58,10 +58,10 @@ function CenterSlider() {
     const navigate = useNavigate();
 // 2. 슬라이드 이벤트핸들러
         const handlePrev = () => {
-            swiper.slideNext()
+            swiper.slidePrev()
         }
         const handleNext = () => {
-          swiper.slidePrev()
+          swiper.slideNext()
         }
         const goRegion=()=>{
             navigate('/RegionTeamPage');
@@ -84,31 +84,54 @@ function CenterSlider() {
       <div className={styles.slidebox}>
         <SwiperSlide onClick={goRegion} className={styles.slide}>
         <p className={styles.text} onClick={goRegion}>전국</p>
-          <div className={styles.divbox}><div className={styles.textbox}><p className={styles.text1}>진행중인 리그</p><p className={styles.text2}style={{color:"#055540"}}>6개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참여가능한 리그</p><p className={styles.text2} style={{color:"#EAAA00"}}>4개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참가 팀</p><p className={styles.text2} style={{color:"#000000"}}>24개</p></div></div>
+          <div className={styles.divbox}>
+            <div className={styles.divbox2}>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 팀</p><p className={styles.text2} >80팀</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균티어</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>브론즈  </p></div></div>
+            <div className={styles.divbox2}><div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균 연령</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>20세</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 선수</p><p className={styles.text2}>568명</p></div></div></div>
           </SwiperSlide>
-        <SwiperSlide className={styles.slide} ><p className={styles.text}>서울특별시</p>
-        <div className={styles.divbox}><div className={styles.textbox}><p className={styles.text1}>진행중인 리그</p><p className={styles.text2} style={{color:"#055540"}}>6개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참여가능한 리그</p><p className={styles.text2} style={{color:"#EAAA00"}}>4개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참가 팀</p><p className={styles.text2} style={{color:"#000000"}}>24개</p></div></div></SwiperSlide>
-        <SwiperSlide className={styles.slide}><p className={styles.text}>경기도</p>
-        <div className={styles.divbox}><div className={styles.textbox}><p className={styles.text1}>진행중인 리그</p><p className={styles.text2} style={{color:"#055540"}}>6개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참여가능한 리그</p><p className={styles.text2} style={{color:"#EAAA00"}}>4개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참가 팀</p><p className={styles.text2} style={{color:"#000000"}}>24개</p></div></div></SwiperSlide>
-        <SwiperSlide className={styles.slide}><p className={styles.text}>인천광역시</p>
-        <div className={styles.divbox}><div className={styles.textbox}><p className={styles.text1}>진행중인 리그</p><p className={styles.text2}style={{color:"#055540"}}>6개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참여가능한 리그</p><p className={styles.text2} style={{color:"#EAAA00"}}>4개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참가 팀</p><p className={styles.text2}style={{color:"#000000"}}>24개</p></div></div></SwiperSlide>
-        <SwiperSlide className={styles.slide}><p className={styles.text}>대전광역시</p>
-        <div className={styles.divbox}><div className={styles.textbox}><p className={styles.text1}>진행중인 리그</p><p className={styles.text2}style={{color:"#055540"}}>6개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참여가능한 리그</p><p className={styles.text2} style={{color:"#EAAA00"}}>4개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참가 팀</p><p className={styles.text2}style={{color:"#000000"}}>24개</p></div></div></SwiperSlide>
-        <SwiperSlide className={styles.slide}><p className={styles.text}>부산광역시</p>
-        <div className={styles.divbox}><div className={styles.textbox}><p className={styles.text1}>진행중인 리그</p><p className={styles.text2}style={{color:"#055540"}}>6개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참여가능한 리그</p><p className={styles.text2} style={{color:"#EAAA00"}}>4개</p></div>
-          <div className={styles.textbox}><p className={styles.text1}>참가 팀</p><p className={styles.text2}style={{color:"#000000"}}>24개</p></div></div></SwiperSlide>
-        ...
+          <SwiperSlide onClick={goRegion} className={styles.slide}>
+        <p className={styles.text} onClick={goRegion}>서울특별시</p>
+          <div className={styles.divbox}>
+            <div className={styles.divbox2}>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 팀</p><p className={styles.text2} >80팀</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균티어</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>브론즈  </p></div></div>
+            <div className={styles.divbox2}><div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균 연령</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>20세</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 선수</p><p className={styles.text2}>568명</p></div></div></div>
+          </SwiperSlide><SwiperSlide onClick={goRegion} className={styles.slide}>
+        <p className={styles.text} onClick={goRegion}>경기도</p>
+          <div className={styles.divbox}>
+            <div className={styles.divbox2}>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 팀</p><p className={styles.text2} >80팀</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균티어</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>브론즈  </p></div></div>
+            <div className={styles.divbox2}><div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균 연령</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>20세</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 선수</p><p className={styles.text2}>568명</p></div></div></div>
+          </SwiperSlide><SwiperSlide onClick={goRegion} className={styles.slide}>
+        <p className={styles.text} onClick={goRegion}>인천광역시</p>
+          <div className={styles.divbox}>
+            <div className={styles.divbox2}>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 팀</p><p className={styles.text2} >80팀</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균티어</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>브론즈  </p></div></div>
+            <div className={styles.divbox2}><div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균 연령</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>20세</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 선수</p><p className={styles.text2}>568명</p></div></div></div>
+          </SwiperSlide><SwiperSlide onClick={goRegion} className={styles.slide}>
+        <p className={styles.text} onClick={goRegion}>부산광역시</p>
+          <div className={styles.divbox}>
+            <div className={styles.divbox2}>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 팀</p><p className={styles.text2} >80팀</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균티어</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>브론즈  </p></div></div>
+            <div className={styles.divbox2}><div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균 연령</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>20세</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 선수</p><p className={styles.text2}>568명</p></div></div></div>
+          </SwiperSlide><SwiperSlide onClick={goRegion} className={styles.slide}>
+        <p className={styles.text} onClick={goRegion}>전라도</p>
+          <div className={styles.divbox}>
+            <div className={styles.divbox2}>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 팀</p><p className={styles.text2} >80팀</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균티어</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>브론즈  </p></div></div>
+            <div className={styles.divbox2}><div className={styles.textbox}><p className={styles.text1} style={{fontSize:".7vw"}}>평균 연령</p><p className={styles.text2} style={{fontSize:"1.5vw"}}>20세</p></div>
+            <div className={styles.textbox}><p className={styles.text1} style={{fontSize:"1vw"}}>전체 선수</p><p className={styles.text2}>568명</p></div></div></div>
+          </SwiperSlide>
         </div>
       </Swiper>
       <div onClick={handlePrev}className={styles.swiperButtonNext}><img onClick={handlePrev}className={styles.polyL}src={polygonl}/></div>

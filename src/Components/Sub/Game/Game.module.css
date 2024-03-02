@@ -230,8 +230,7 @@
     align-items: center;
 }
 .pages{
-    margin: 0 1vw;
-    cursor: pointer;
+    margin: 0 1vw
 }
 .arrowl{
     rotate: 180deg;
@@ -246,100 +245,10 @@
 }
 .profile{
     width: 7vw;
-    height: 6vw;
+    height: 7vw;
     margin:0 1vw
 }
-.teammember{
-    display: flex;
-    flex-direction: column;
-    background-color: #F8F8F8;
-    width: 35%;
-    height: 40vw;
-    border-radius: 3vw;
-    box-shadow: 0vw .5vw .5vw rgba(0, 0, 0, 0.25);
-    margin-left: 2vw;
-    margin-top: 13.3vw;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-}
-.playerpro{
-    font-family: 'Inter Bold';
-    font-size: .8vw;
-    font-weight: 500;
-    margin: 0 0 .8vw 0;
-    color: #6E6E6E;
-    margin: 2vw 0 0 -23vw;
-}
-.contentbox1{
-    display: flex;
-    align-items: center;
-    border-bottom: .2vw solid black;
-    width: 90%;
-    height: 11vw;
-}
-.positionbox{
-    display: flex;
-}
-.position{
-    width: 14vw;
-    height:18vw;
-    background-color: #D9D9D9;
-}
-.contentbox3{
-    display: flex;
-    flex-direction: column;
-    margin-left: 2vw;
-}
-.contentbox4{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 2vw;
-}
-.about{
-    font-family: 'Inter Bold';
-    font-size: 1vw;
-    color: #6E6E6E;
-    font-weight: 600;
-    margin: 0 0 .8vw 0;
-}
-.inform{
-    font-family: 'Inter Bold';
-    font-size: 1vw;
-    font-weight: 700;
-    margin: 0 0 .8vw 0;
-}
-.prefer{
-    margin: 1vw 5.5vw .4vw 5.5vw;
-    font-family: 'Inter Bold';
-    font-size: .6vw;
-    color: #6E6E6E;
-}
-.path{
-    font-family: 'Inter Bold';
-    font-size: .6vw;
-    color: #6E6E6E;
 
-    margin-bottom: 2vw;
-}
-.contentbox{
-    display: flex;
-    align-items: center;
-}
-.textbox{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.FCname{
-    font-family: 'Inter Bold';
-    font-size: 1.6vw;
-    color: black;
-    font-weight: 700;
-    margin-bottom: .4vw;
-}
 .textbox0{
     display: flex;
     flex-direction: column;
@@ -405,4 +314,231 @@
     font-size: .8vw;
     font-weight: 600;
     margin:.5vw 0;
+}
+.matchbox{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    
+}
+.goalbox{
+    display: flex;
+    width: 80%;
+    height:14vw;
+    border: .3vw solid #D6E09C;
+    margin-top: 13vw;
+    border-radius: 3vw;
+    justify-content: center;
+    margin-left: 5vw;
+    box-shadow: 0 .8vw 1vw #9b9b9b66;
+}
+.text{
+    font-family: 'Inter Bold';
+    font-size: .6vw;
+    font-weight: 600;
+    color: #6E6E6E;
+    margin: 0 1vw;
+    height: 2vw;
+}
+.team{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .5vw;
+}
+.teamlogo{
+    width: 3vw;
+}
+.versus{
+    display: flex;
+    text-align: center;
+    height: 4vw;
+    align-items: center;
+    margin-top: 1vw;
+}
+.score{
+    font-family: 'Inter Bold';
+    font-size: 1.5vw;
+    font-weight: 800;
+}
+.vs{
+    font-family: 'Inter Bold';
+    font-size: 1.5vw;
+    font-weight: 800;
+    color: #6E6E6E;
+    margin: 0 1vw;
+}
+.teamname{
+    font-family: 'Inter Bold';
+    font-size: 1.5vw;
+    font-weight: 800;
+    margin: .8vw 0;
+}
+.goal{
+    height: 6vw;
+    overflow-y: scroll;
+}
+.goalm{
+    margin: .5vw 0 ;
+    font-family: 'Inter Bold';
+    font-size: .8vw;
+    font-weight: 700;
+    color: #6E6E6E;
+    
+}
+.inform{
+    display: flex;
+    flex-direction: column  ;
+    margin-top: 2vw;
+    width: 100%;
+    margin-left: 5vw;
+}
+.basic{
+    display: flex;
+    width: 100%;
+}
+.basiclogo{
+    border-top: .2vw solid #A5B879;
+    border-left: .2vw solid #A5B879;
+    border-right: .2vw solid #A5B879;
+    
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    width: 40%;
+    height: 2.3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter Bold';
+    font-size: 1vw;
+    font-weight: 700;
+    background-color: #F8F8F8;
+}
+.basiccontents{
+    width: 80%;
+    height: 10.5vw;
+    border-bottom: .2vw solid #A5B879;
+    border-left: .2vw solid #A5B879;
+    border-right: .2vw solid #A5B879;
+    background-color: #F8F8F8;
+    border-bottom-left-radius: 3vw;
+    border-bottom-right-radius: 3vw;
+    box-shadow: 0 .8vw 1vw #9b9b9bac;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.basictextbox{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+.basictext{
+    font-family: 'Inter Semi Bold';
+    color: #6E6E6E;
+    font-weight: 700;
+    width: 30%;
+    text-align: center;
+    margin: .4vw 0 ;
+}
+.basictext1{
+    font-family: 'Inter Semi Bold';
+    font-weight: 700;
+    width: 50%;
+    text-align: center;
+    margin: .4vw 0 ;
+}
+.lineup{
+    display: flex;
+    
+}
+.lineuplogo{
+    border-top: .2vw solid #D6E09C;
+    border-left: .2vw solid #D6E09C;
+    border-right: .2vw solid #D6E09C;
+    border-bottom: .2vw solid #A5B879;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    width: 39%;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter Bold';
+    font-size: 1vw;
+    font-weight: 700;
+    background-color: #F8F8F8;
+}
+.lineupcontents{
+    width: 80%;
+    height: 21vw;
+    border-bottom: .2vw solid #A5B879;
+    border-left: .2vw solid #A5B879;
+    border-right: .2vw solid #A5B879;
+    background-color: #F8F8F8;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    box-shadow: 0 .8vw 1vw #9b9b9bac;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.positionbox{
+    width:90%;
+    display: flex;
+    justify-content: center;
+    border-bottom: .15vw solid #D9D9D9;
+}
+.positionbox1{
+    width:90%;
+    display: flex;
+    justify-content: center;
+}
+
+.atack{
+    display: flex;
+    flex-direction: column;
+    width: 7vw;
+    height: 5vw;
+    overflow-y: scroll;
+    align-items: center;
+    margin-top: .5vw;
+}
+
+.protect{
+    display: flex;
+    flex-direction: column;
+    width: 7vw;
+    height: 5vw;
+    overflow-y: scroll;
+    align-items: center;
+    margin-top: .5vw;
+}
+.kiper{
+    display: flex;
+    flex-direction: column;
+    width: 7vw;
+    height: 5vw;
+    overflow-y: scroll;
+    align-items: center;
+    margin-top: .5vw;
+}
+.playername{
+    font-family: 'Inter Semi Bold';
+    font-weight: 800;
+    color: #6E6E6E;
+    font-size: .8vw;
+    
+    margin: .3vw 0 ;
+}
+.basictext2{
+    font-family: 'Inter Semi Bold';
+    font-weight: 800;
+    font-size: .8vw;
+    width: 20%;
+    text-align: center;
+    margin-top: .9vw;
 }

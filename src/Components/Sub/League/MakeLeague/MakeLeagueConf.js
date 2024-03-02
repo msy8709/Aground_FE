@@ -6,29 +6,17 @@ import CompanyInfo from "../../../Common/CompanyInfo";
 import { Navigate, useNavigate } from "react-router-dom";
 
 
-function MakeLeagueConf(){
+function MakeLeagueConf(props){
     const [nickname, setNickname]= useState('');
     const isNickname = sessionStorage.getItem('nickname');
     const navigate = useNavigate();
-    if (isNickname){
-        setNickname(isNickname)
-    }
-    const gotoMain=()=>{
-        navigate('/ALMainPage')
-    }
+    
+    
     return(
-        <div className={styles.back1}>
-            {nickname ? <ALNavBar/>:<NavBar/>}
-            <div className={styles.back2}>
-                <div className={styles.whitebord}>
+            <>
                     <p className={styles.name1}>리그 생성하기</p>
-                    <div className={styles.namebox}><p className={styles.name}>안녕</p><p className={styles.alert}>리그가 생성되었습니다.</p></div>
-                    <div className={styles.select} onClick={gotoMain}>확인</div>
-                </div>
-
-            </div>
-            <CompanyInfo/>
-        </div>
-    )
-}
+                    <div className={styles.namebox}><p className={styles.name}>{props.name}</p><p className={styles.alert}>리그가 생성되었습니다.</p></div>
+                    <div className={styles.select} onClick={props.gotoMain}>확인</div>
+                </>
+)}
 export default MakeLeagueConf;

@@ -11,18 +11,30 @@ import side from "../../../assets/sideIcon.png";
 import plus from "../../../assets/plusIcon.png";
 import { useNavigate } from "react-router-dom";
 import arrow from "../../../assets/Arrow.png";
-
+import LoginErrorPage from "../../../Components/ErrorPage/LoginErrorPage";
+import client from "../../../Clients";
 function LeaguePage(){
     const [nickname,setNickname] = useState();
     const [state, setState] = useState();
     const [color, setColor] = useState();
     const navigate = useNavigate();
-
+    const [leagueDatas,setLeagueDatas] = useState([]);
+    const [currentPage,setCurrentPage] = useState(1);
+    const [slicedData,setSlicedData] = useState([]);
+    const itemsPerPage = 10;
+    const [ startIndex,setStartIndex] = useState(1);
+    const [endIndex,setEndIndex] = useState(10);
+    const [element,setElement]=useState([]);
+    let [data,setData] = useState()
+    
+    let newStartIndex = (currentPage - 1) * itemsPerPage;
+    let newEndIndex = newStartIndex +itemsPerPage;
     const goRegion = () => {
         navigate('/LeagueByRegion');
     }
     const makeLeague = () => {
-        navigate('/MakeLeaguePage');
+        {nickname ? navigate('/MakeLeaguePage'):navigate('/LoginErrorPage')}
+        
     }
     const LeagueDetail = () => {
         navigate('/LeagueDetailPage');
@@ -35,13 +47,34 @@ function LeaguePage(){
     },[])
     const stateSelect = (event) => {
         setState(event.target.value);
-        if (event.target.value === "모집중"){
-            setColor("#EAAA00")
-        } else if(event.target.value === "진행중"){
-            setColor("#055540")
-        }else{
-            setColor("#E41819")
-        }
+        
+    }
+    useEffect(()=> {
+        client.get('/api/league/main/')
+        .then(function(response){
+            setLeagueDatas(response.data)
+            setSlicedData(response.data.slice(startIndex,endIndex))
+            console.log(response.data)
+            let tmp=[];
+            for (let i=1;i<response.data.length/10+1;i++){
+                tmp[i-1] = i
+                
+            }
+            setElement(tmp)
+            console.log(tmp)
+
+        })
+    },[startIndex])
+    const pagination = (pages) =>{
+        console.log(pages)
+        newStartIndex = (pages - 1) * itemsPerPage;
+        newEndIndex = newStartIndex +itemsPerPage;
+        setStartIndex(newStartIndex);
+        setEndIndex(newEndIndex);
+    }
+    const inform = (item) => {
+    
+        setData(item)
     }
     
     return(
@@ -57,122 +90,48 @@ function LeaguePage(){
                         <option value="모집중">모집중</option>
                         <option value="진행중">진행중</option>
                         <option value="종료">종료</option>
-                        </select>
+                    </select>
                 </div>
                 <div className={styles.contentbox}>
                     <div className={styles.leaguebox}>
                         <div className={styles.textgroup2}>
-                        <div className={styles.textgroup}>
-                            <p className={styles.text1}>전체</p>
-                            <p className={styles.text2}>리그 & 컵</p>
+                            <div className={styles.textgroup}>
+                                <p className={styles.text1}>전체</p>
+                                <p className={styles.text2}>리그 & 컵</p>
+                            </div>
+                            <div className={styles.region} onClick={goRegion}>지역별 리그 &gt;</div>
                         </div>
-                        <div className={styles.region} onClick={goRegion}>지역별 리그 ></div>
+                        <div className={styles.tableArea}>
+                            <table className={styles.table}>
+                                <thead tr className={styles.thead}>
+                                    <tr className={styles.tr}>
+                                        <th className={styles.thead1}>평균 티어</th>
+                                        <th className={styles.thead2}>리그</th>
+                                        <th className={styles.thead3}>종류</th>
+                                        <th className={styles.thead4}>참가팀 수</th>
+                                        <th className={styles.thead5}>상태</th>
+                                        <th className={styles.thead6}>시작일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {slicedData.map(item=>(
+                                        <tr onClick={LeagueDetail}className={styles.tr2} key={item['league_code']}>
+                                        <td className={styles.td}>{item['league_name']}</td>
+                                        <td className={styles.td}>{item['league_name']}</td>
+                                        <td className={styles.td}>{item['league_gametype']}</td>
+                                        <td className={styles.td}>{item['league_team']}</td>
+                                        <td style={item['league_official'] === '모집중' ? { color: "#EAAA00" } :item['league_official'] === '진행중'? { color: "#055540" }:item['league_official'] === '종료'?{ color: "#E41819" }:{ color: "#000000" }}className={styles.td1}>{item['league_endjoin'] <= new Date() ?'모집중':item['league_endjoin']>new Date()?'진행중':'종료' }</td>
+                                        <td className={styles.td}>{item['league_startdate']}</td>
+                                    </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
-                        <table className={styles.table}>
-                            <thead tr className={styles.thead}>
-                                <tr className={styles.tr}>
-                                    <th className={styles.thead1}>평균 티어</th>
-                                    <th className={styles.thead2}>리그</th>
-                                    <th className={styles.thead3}>종류</th>
-                                    <th className={styles.thead4}>참가팀 수</th>
-                                    <th className={styles.thead5}>상태</th>
-                                    <th className={styles.thead6}>시작일</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr onClick={LeagueDetail}className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                <tr className={styles.tr2}>
-                                    <td className={styles.td}>브론즈</td>
-                                    <td className={styles.td}>인천 미추홀구 리그</td>
-                                    <td className={styles.td}>일반 리그</td>
-                                    <td className={styles.td}>12팀</td>
-                                    <td style={{color:color}}className={styles.td1}>모집중</td>
-                                    <td className={styles.td}>2024.08.30</td>
-                                </tr>
-                                
-                            </tbody>
-                            
-                        </table>
-                        <div className={styles.contentpages}><img src={arrow} className={styles.arrowl}/><p className={styles.pages}>1</p><img src={arrow} className={styles.arrow}/></div>
+                        <div className={styles.contentpages}><img src={arrow} className={styles.arrowl}/>
+                        {element.map(pages=>(
+                            <p className={styles.pages} onClick={() => pagination(pages)}>{pages}</p>
+                        ))}
+                        <img src={arrow} className={styles.arrow}/></div>
                        </div>
                        <div className={styles.makeLeague} onClick={makeLeague}><p className={styles.plus}>+</p>리그 만들기</div>
                 </div>

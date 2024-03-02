@@ -10,7 +10,7 @@
 }
 .textgroup2{
     display: flex;
-    width: 90%;
+    width: 80%;
 }
 .othercontents{
     width: 61%;
@@ -74,6 +74,7 @@
     flex-direction: column;
     margin-top: .7vw;
     width: 100%;
+    height: 50vw;
     justify-content: center;
     align-items: center;
     
@@ -81,7 +82,7 @@
 
 .leaguebox{
     background-color: #F8F8F8;
-    width: 60vw;
+    width: 60%;
     height: 40vw;
     border-radius: 1vw;
     box-shadow: 0vw .5vw .5vw rgba(0, 0, 0, 0.25);
@@ -93,7 +94,8 @@
 }
 
 .textgroup{
-    width: 90%;
+    width: 80%;
+    height: 8vw;
 }
 .text1{
     font-family: 'Inter Bold';
@@ -130,6 +132,13 @@
     width: 1vw;
     margin-left:.2vw;
     color: white;
+}
+.tableArea{
+    width:90%;
+    height:28vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .table{
     width:90%;

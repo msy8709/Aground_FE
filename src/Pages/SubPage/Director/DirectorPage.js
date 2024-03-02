@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import client from "../../../Clients";
 
-import PageNotFound from "../../../Components/ErrorPage/PageNotFound"
+import PageNotPrepared from "../../../Components/ErrorPage/PageNotPrepared";
 function DirectorPage(){
     const [nickname,setNickname] = useState();
     useEffect(()=>{
@@ -26,7 +26,7 @@ function DirectorPage(){
     return(
         <div>
             {nickname ? <ALNavBar/> : <NavBar/>}
-            <PageNotFound/>
+            <PageNotPrepared/>
             <CompanyInfo/>
         </div>
         

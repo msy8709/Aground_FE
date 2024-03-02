@@ -5,19 +5,19 @@ function SelectRegion(props){
     const [selectregion, setSelectregion] = useState('지역선택');
     const [isClicked,setIsClicked] = useState(false)
     const handleChange = (event) => {
-        setSelectregion(event.target.value)
+        props.setRegion(event.target.value)
         console.log(event.target.value)
     }
     useEffect(()=>{
-        {selectregion ==='지역선택' ?setIsClicked(false):setIsClicked(true)}
-    },[selectregion])
+        {props.region ==='지역선택' ?setIsClicked(false):setIsClicked(true)}
+    },[props.region])
     return (
         <>
-            <p className={styles.name1}>{props.name} 리그 생성하기</p>
+            <p className={styles.name1}> 리그 생성하기</p>
             <p className={styles.name2}>STEP 4. 리그를 진행할 지역범위를 설정해 주세요.</p>
 
             <select className={styles.selectbox}value='option' onChange={handleChange}>
-                <option value="지역선택">{selectregion}</option>
+                <option value="지역선택">{props.region}</option>
                 <option value="서울특별시">서울특별시</option>
                 <option value="부산광역시">부산광역시</option>
                 <option value="인천광역시">인천광역시</option>

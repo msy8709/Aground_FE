@@ -56,10 +56,10 @@ function CenterSlider() {
     const [swiperIndex,setSwiperIndex] = useState(0);
 // 2. 슬라이드 이벤트핸들러
         const handlePrev = () => {
-            swiper.slideNext()
+            swiper.slidePrev()
         }
         const handleNext = () => {
-          swiper.slidePrev()
+          swiper.slideNext()
         }
   return (
     <>

@@ -93,11 +93,13 @@
 .divbox{
     width: 16vw;
     border-top: .1vw solid black;
-    margin-top: 1vw;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 1vw;
+    
     
     
 }

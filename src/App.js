@@ -9,8 +9,8 @@ import ASigninPage from "./Pages/SignUp/ASignupPage";
 import ALMainPage from "./Pages/MainPage/ALMainPage";
 import WelcomeSignUpPage from "./Pages/SignUp/WelcomeSignUpPage";
 import DirectorPage from "./Pages/SubPage/Director/DirectorPage";
-import EquipmentPage from "./Pages/SubPage/EquipmentPage";
-import GamePage from "./Pages/SubPage/GamePage";
+import EquipmentPage from "./Pages/SubPage/Equipment/EquipmentPage";
+import GamePage from "./Pages/SubPage/GamePage/GamePage";
 import LeaguePage from "./Pages/SubPage/League/LeaguePage";
 import PlayerPage from "./Pages/SubPage/Player/PlayerPage";
 import TeamPage from "./Pages/SubPage/Team/TeamPage";
@@ -21,6 +21,9 @@ import LeagueDetailPage from "./Pages/SubPage/League/LeagueDetailPage";
 import TeamDetailPage from "./Pages/SubPage/League/TeamDetailPage";
 import TeamByRegionPage from "./Pages/SubPage/Team/TeamByRegionPage";
 import RegionTeamPage from "./Pages/SubPage/Team/RegionTeamPage";
+import GameByRegionPage from "./Pages/SubPage/GamePage/GameByRegionPage";
+import PlayerByRegionPage from "./Pages/SubPage/Player/PlayerByRegionPage";
+import LoginErrorPage from "./Components/ErrorPage/LoginErrorPage";
 function App() {
   return(
     <BrowserRouter>
@@ -51,6 +54,9 @@ function App() {
         <Route path="/TeamDetailPage" element={<TeamDetailPage />} />
         <Route path="/TeamByRegionPage" element={<TeamByRegionPage />} />
         <Route path="/RegionTeamPage" element={<RegionTeamPage />} />
+        <Route path="/GameByRegionPage" element={<GameByRegionPage />} />
+        <Route path="/PlayerByRegionPage" element={<PlayerByRegionPage />} />
+        <Route path="/LoginErrorPage" element={<LoginErrorPage />} />
       </Routes>
     </BrowserRouter>
     

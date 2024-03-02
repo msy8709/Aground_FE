@@ -1,4 +1,4 @@
-import styles from "./PlayerPage.module.css";
+import styles from "./Game.module.css";
 import NavBar from "../../../Components/NavBar/NavBar";
 import CompanyInfo from "../../../Components/Common/CompanyInfo";
 import ALNavBar from "../../../Components/NavBar/ALNavBar";
@@ -13,28 +13,32 @@ import { useNavigate } from "react-router-dom";
 import arrow from "../../../assets/Arrow.png";
 import profile from "../../../assets/profile.png";
 import client from "../../../Clients";
-import defaultimg from "../../../assets/defaultimg.png";
+import defaultimg from "../../../assets/profile.png";
 
 export default function PlayerPage(){
     const [nickname,setNickname] = useState();
     const [state, setState] = useState();
     const [playerDatas,setPlayerDatas] = useState();
     const [currentPage,setCurrentPage] = useState(1);
-    const [data,setData] = useState({
-})
+    const [data,setData] = useState({})
+    const [basic,setBasic] = useState('B')
     const itemsPerPage = 10;
     let startIndex = (currentPage - 1) * itemsPerPage;
     let endIndex = startIndex + itemsPerPage;
     const [slicedData,setSlicedData] = useState([]);
     
     const [element,setElement]=useState([]);
-
     const navigate = useNavigate();
 
     const goRegion = () => {
-        navigate('/PlayerByRegionPage');
+        navigate('/GameByRegionPage');
     }
-    
+    const makeLeague = () => {
+        navigate('/MakeLeaguePage');
+    }
+    const RegionDetail = () => {
+        navigate('/TeamByRegionPage');
+    }
     useEffect(()=>{
         const isNickname = sessionStorage.getItem('nickname');
         if(isNickname){
@@ -57,7 +61,7 @@ export default function PlayerPage(){
                 
             }
             setElement(tmp)
-            
+            console.log(element)
     })
     },[])
     const pagination = (pages) => {
@@ -70,6 +74,15 @@ export default function PlayerPage(){
         console.log(item)
         setData(item)
     }
+    const basicClick = () =>{
+        setBasic('B')
+        console.log(basic)
+    }
+    const lineupClick = () =>{
+        setBasic('L')
+        console.log(basic)
+    }
+    
     
 
 
@@ -128,7 +141,6 @@ export default function PlayerPage(){
                                         <tbody>
                                             {/* .filter(item=>item['player_position'] === state) */}
                                         {slicedData.map(item => (
-                                            
                                             <tr className={styles.tr2} onClick={()=>inform(item)} key={item['user_code']}>
                                                 <td className={styles.td}>{item['player_point']}</td>
                                                 <td className={styles.td}>{item['user_name']}</td>
@@ -150,37 +162,54 @@ export default function PlayerPage(){
                             </div>
                         </div>
                     </div>
-                    <div className={styles.teammember}>
-                        <div className={styles.playerpro}>선수 프로필</div>
-                            <div className={styles.contentbox1}><img className={styles.profile} src={defaultimg}/>
-                                <div className={styles.textbox0}>
-                                    <div className={styles.FCname}></div>
-                                    <div className={styles.textbox}>
-                                        <div className={styles.text}><p className={styles.text3}>키</p><p className={styles.text4}>{data['player_height']}</p></div>
-                                        <div className={styles.text}><p className={styles.text3}>몸무게</p><p className={styles.text4}>{data['player_weight']}kg</p></div>
-                                        <div className={styles.text}><p className={styles.text3}>주발</p><p className={styles.text4}>{data['player_foot']}</p></div>
-                                    </div>
-                                </div>
+                    <div className={styles.matchbox}>
+                        <div className={styles.goalbox}>
+                            {/* <p className={styles.text}>경기 내용</p> */}
+                            <div className={styles.team}>
+                                <img className={styles.teamlogo}src={defaultimg}/><p className={styles.teamname}>메시아 FC</p><div className={styles.goal}><p className={styles.goalm}>손흥민</p><p className={styles.goalm}>이강인</p><p className={styles.goalm}>이강인</p></div>
                             </div>
-                            <div className={styles.aboutmem}>
-                                <div className={styles.content}>
-                                    <p className={styles.prefer}>선호 포지션</p>
-                                    <div className={styles.positionbox}>
-                                        <div className={styles.position}></div>
-                                        <div className={styles.contentbox3}><p className={styles.about}>연령/성별</p><p className={styles.about}>등번호</p><p className={styles.about}>골</p><p className={styles.about}>어시스트</p><p className={styles.about}>출전경기</p><p className={styles.about}>경기참여율</p><p className={styles.about}>성실포인트</p></div>
-                                        <div className={styles.contentbox4}><p className={styles.inform}>{data['age']}</p><p className={styles.inform}>7</p><p className={styles.inform}>{data['player_goal']}</p><p className={styles.inform}>{data['player_assist']}</p><p className={styles.inform}>2</p><p className={styles.inform}>50%</p><p className={styles.inform}>{data['player_point']}</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.career}>
-                                <p className={styles.careertext}>클럽 경력</p>
-                                <div className={styles.careerbox}><span className={styles.period}>2024.06.24</span><span className={styles.fc}>토트넘</span></div>
-                                
+                            <div className={styles.versus}><p className={styles.score}>3</p><p className={styles.vs}>vs</p><p className={styles.score}>2</p></div>
+                            <div className={styles.team}>
+                                <img className={styles.teamlogo}src={defaultimg}/><p className={styles.teamname}>메시아 FC</p><div className={styles.goal}><p className={styles.goalm}>손흥민</p><p className={styles.goalm}>이강인</p><p className={styles.goalm}>이강인</p></div>
                             </div>
                         </div>
-                    </div>                   
-                </div>        
-                <CompanyInfo/>
+                        <div className={styles.inform}>
+                            <div className={styles.basic}>
+                                <div className={styles.basiclogo} onClick={basicClick}>기본 정보</div>
+                                <div className={styles.lineuplogo} onClick={lineupClick}>라인업</div>
+                                
+                            </div>  
+                            <div className={styles.lineup}>
+                                {basic === 'B'?<div className={styles.basiccontents}>
+                                    <div className={styles.basictextbox}>
+                                        <p className={styles.basictext}>장소</p><p className={styles.basictext1}>인하대 운동장</p>
+                                    </div>
+                                    <div className={styles.basictextbox}>
+                                        <p className={styles.basictext}>날짜</p><p className={styles.basictext1}>24.11.02(수) 16:00 </p>
+                                    </div>
+                                    <div className={styles.basictextbox}>
+                                        <p className={styles.basictext}>종류</p><p className={styles.basictext1}>인하대 공대스리가 리그</p>
+                                    </div>
+                                </div>:<div className={styles.lineupcontents}>
+                                    <div className={styles.positionbox}>
+                                        <div className={styles.atack}><p className={styles.playername}>이강인</p></div><p className={styles.basictext2}>공격수</p><div className={styles.atack}><p className={styles.playername}>이강인</p></div>
+                                    </div>
+                                    <div className={styles.positionbox}>
+                                        <div className={styles.atack}><p className={styles.playername}>이강인</p></div><p className={styles.basictext2}>미드필더</p><div className={styles.atack}><p className={styles.playername}>이강인</p></div>
+                                    </div>
+                                    <div className={styles.positionbox}>
+                                        <div className={styles.protect}><p className={styles.playername}>이강인</p></div><p className={styles.basictext2}>수비수</p><div className={styles.protect}><p className={styles.playername}>이강인</p></div>
+                                    </div>
+                                    <div className={styles.positionbox1}>
+                                        <div className={styles.kiper}><p className={styles.playername}>이강인</p></div><p className={styles.basictext2}>골키퍼</p><div className={styles.kiper}><p className={styles.playername}>이강인</p></div>
+                                    </div>
+                                </div>}
+                                
+                            </div >
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
-    
+        </div>
     )}

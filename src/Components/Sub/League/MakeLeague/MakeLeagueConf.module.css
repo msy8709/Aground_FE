@@ -1,30 +1,9 @@
 
-.back2{
-    background: linear-gradient(180deg, #D6E09C 0%, #FFFFFF 100%);
-    width: 100%;
-    height: 70vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: scroll;
-}
-.whitebord{
-    width: 60vw;
-    height: 35vw;
-    background-color: #FFFFFF;
-    border-radius: .8vw;
-    box-shadow: 0vw .7vw .9vw #afafaf;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 .name1{
     font-family: 'Inter Semi Bold';
     font-weight: 700;
     font-size: 1.6vw;
-    margin-top: -9vw;
+    margin-top: -3vw;
 }
 .name{
     font-family: 'Inter Semi Bold';
@@ -42,7 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   margin-top: 8vw;
+   margin-top: 2vw;
 }
 .select{
     width: 6vw;
@@ -54,5 +33,5 @@
     text-align: center;
     line-height: 2.5vw;
     border-radius: .7vw;
-    margin-top: 3vw;
+    margin-top: 1vw;
 }

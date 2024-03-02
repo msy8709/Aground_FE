@@ -41,6 +41,7 @@ function Login(props){
         const loginData = {
             'user_id':userid,
             'password': userpw
+
         }
         client.post('/api/login/login/', loginData)
         .then(function(response){
@@ -48,6 +49,7 @@ function Login(props){
             setToken(response.data.token)
             sessionStorage.setItem('nickname', response.data.user_nickname);
             sessionStorage.setItem('token', response.data.token)
+            sessionStorage.setItem('usercode', response.data.user_code)
             navigate('/ALMainPage');
         })
         .catch(function(error){
@@ -63,7 +65,7 @@ function Login(props){
             <div className={styles.login}>
                 <div className={styles.logo}>AGROUNDS</div>
                 <div className={styles.idbox}><input onChange={handleIdChange} placeholder="아이디"className={styles.id} type="text"></input></div>
-                <div className={styles.pwbox}><input onChange={handlePwChange} placeholder="비밀번호"className={styles.pw} type="text"></input></div>
+                <div className={styles.pwbox}><input onChange={handlePwChange} placeholder="비밀번호"className={styles.pw} type="password"></input></div>
                 {isid && isPassword ?<Button onClick={onAgrooundClick} type="submit"color="#FFFFFF"backcolor="#055540" text="로그인" logoimg={logo5}/>:<Button type="button"color="white"backcolor="#dadada" text="로그인" logoimg={logo5}/>}
                 
                 <div className={styles.find}>
