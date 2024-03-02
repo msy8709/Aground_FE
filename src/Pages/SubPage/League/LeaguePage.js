@@ -15,7 +15,7 @@ import LoginErrorPage from "../../../Components/ErrorPage/LoginErrorPage";
 import client from "../../../Clients";
 function LeaguePage(){
     const [nickname,setNickname] = useState();
-    const [state, setState] = useState();
+    const [state, setState] = useState('');
     const [color, setColor] = useState();
     const navigate = useNavigate();
     const [leagueDatas,setLeagueDatas] = useState([]);
@@ -25,6 +25,7 @@ function LeaguePage(){
     const [ startIndex,setStartIndex] = useState(1);
     const [endIndex,setEndIndex] = useState(10);
     const [element,setElement]=useState([]);
+    const [filteredData,setFilteredData] = useState([]);
     let [data,setData] = useState()
     
     let newStartIndex = (currentPage - 1) * itemsPerPage;
@@ -54,28 +55,35 @@ function LeaguePage(){
         .then(function(response){
             setLeagueDatas(response.data)
             setSlicedData(response.data.slice(startIndex,endIndex))
-            console.log(response.data)
+            
             let tmp=[];
             for (let i=1;i<response.data.length/10+1;i++){
                 tmp[i-1] = i
                 
             }
             setElement(tmp)
-            console.log(tmp)
-
+           
+            if (state === '') {
+                setFilteredData(leagueDatas);
+              } else {
+                let filtered = leagueDatas.filter(item => item['league_official'] === state);
+                setFilteredData(filtered);
+              }
+              console.log(filteredData)
+              console.log(state)
         })
     },[startIndex])
     const pagination = (pages) =>{
-        console.log(pages)
+        
         newStartIndex = (pages - 1) * itemsPerPage;
         newEndIndex = newStartIndex +itemsPerPage;
         setStartIndex(newStartIndex);
         setEndIndex(newEndIndex);
     }
     const inform = (item) => {
-    
         setData(item)
     }
+   
     
     return(
         <div>
@@ -114,7 +122,7 @@ function LeaguePage(){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {slicedData.map(item=>(
+                                    {filteredData.map(item=>(
                                         <tr onClick={LeagueDetail}className={styles.tr2} key={item['league_code']}>
                                         <td className={styles.td}>{item['league_name']}</td>
                                         <td className={styles.td}>{item['league_name']}</td>
