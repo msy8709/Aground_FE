@@ -64,9 +64,9 @@ function LeaguePage(){
             setElement(tmp)
            
             if (state === '') {
-                setFilteredData(leagueDatas);
+                setFilteredData(response.data);
               } else {
-                let filtered = leagueDatas.filter(item => item['league_official'] === state);
+                let filtered = response.data.filter(item => item['league_official'] === state);
                 setFilteredData(filtered);
               }
               console.log(filteredData)
