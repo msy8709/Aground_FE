@@ -22,7 +22,7 @@ function SignupModal(props){
         navigate("/GSigninPage")
     }
     const goKakao=()=>{
-        navigate("/KSigninPage")
+        window.location.replace(process.env.REACT_APP_BASE_URL+"/api/login/kakao");
     }
     const goAground=()=>{
         navigate("/ASigninPage")

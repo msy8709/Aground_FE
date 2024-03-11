@@ -17,15 +17,14 @@ import defaultimg from "../../../assets/defaultimg.png";
 
 export default function PlayerPage(){
     const [nickname,setNickname] = useState();
-    const [state, setState] = useState();
-    const [playerDatas,setPlayerDatas] = useState();
+    const [state, setState] = useState('포지션');
+    const [playerDatas,setPlayerDatas] = useState([]);
     const [currentPage,setCurrentPage] = useState(1);
-    const [data,setData] = useState({
-})
+    const [userCode,setUserCode] = useState({});
+    const [playerDetail, setPlayerDetail] = useState({});
     const itemsPerPage = 10;
     let startIndex = (currentPage - 1) * itemsPerPage;
     let endIndex = startIndex + itemsPerPage;
-    const [slicedData,setSlicedData] = useState([]);
     
     const [element,setElement]=useState([]);
 
@@ -45,30 +44,44 @@ export default function PlayerPage(){
         setState(event.target.value);
     }
     useEffect(()=>{
-        client.get('api/player/get-all-players/')
+        let url = 'api/player/search/?page=' + currentPage;
+        if(state !== '포지션')
+            url += '&position=' + state;
+        client.get(url)
         .then(function(response){
             setPlayerDatas(response.data.data)
-            // console.log(response.data.data[0])
-            setSlicedData(response.data.data.slice(startIndex, endIndex))
-            
+
             let tmp = []
-            for (let i=1;i<response.data.data.length/10+1;i++){
-                tmp[i-1] = i
-                
+            for (let i=0;i<response.data.num_pages;i++){
+                tmp[i] = i+1
             }
             setElement(tmp)
-            
-    })
-    },[])
+
+            setUserCode(response.data.data[0]['user_code'])
+        }).catch(function(error){
+            console.log(error)
+        })
+    },[currentPage ,state])
+
+    useEffect(()=>{
+        client.get('api/player/detail/?user_code=' + userCode)
+        .then(function(response){
+            console.log(response.data)
+            setPlayerDetail(response.data)
+        }).catch(function(error){
+            console.log(error)
+        })
+    },[userCode])
+
     const pagination = (pages) => {
-        console.log(pages)
-        startIndex = (pages - 1) * itemsPerPage;
-        endIndex = startIndex + itemsPerPage;
+        // console.log(pages)
+        // startIndex = (pages - 1) * itemsPerPage;
+        // endIndex = startIndex + itemsPerPage;
+        setCurrentPage(pages)
     }
     
     const inform = (item) => {
-        console.log(item)
-        setData(item)
+        setUserCode(item)
     }
     
 
@@ -82,7 +95,7 @@ export default function PlayerPage(){
                     <div className={styles.back2}>
                         <div className={styles.sortbox}>
                             <div className={styles.searchbox}><img src={dodbogi}/><input className={styles.search}type="text"/></div>
-                            <select onClick={stateSelect}name="state" className={styles.sort}>
+                            <select onChange={stateSelect}name="state" className={styles.sort}>
                                 <option className={styles.sort}>포지션<img className={styles.dropicon}src={plus}/></option>
                                 <option value="ST">ST</option>
                                 <option value="LWF">LWF</option>
@@ -114,7 +127,6 @@ export default function PlayerPage(){
                                 <div className={styles.tableArea}>
                                     <table className={styles.table}>
                                         <thead tr className={styles.thead}>
-                                            
                                                 <tr className={styles.tr}>
                                                 <th className={styles.thead1}>성실 포인트</th>
                                                 <th className={styles.thead2}>선수 이름</th>
@@ -127,9 +139,9 @@ export default function PlayerPage(){
                                         </thead>
                                         <tbody>
                                             {/* .filter(item=>item['player_position'] === state) */}
-                                        {slicedData.map(item => (
+                                        {playerDatas.map(item => (
                                             
-                                            <tr className={styles.tr2} onClick={()=>inform(item)} key={item['user_code']}>
+                                            <tr className={styles.tr2} onClick={()=>inform(item['user_code'])} key={item['user_code']}>
                                                 <td className={styles.td}>{item['player_point']}</td>
                                                 <td className={styles.td}>{item['user_name']}</td>
                                                 <td className={styles.td}>{item['player_point']}</td>
@@ -143,7 +155,6 @@ export default function PlayerPage(){
                                 </div>
                                 <div className={styles.contentpages}><img src={arrow} className={styles.arrowl}/>
                                     {element.map(pages=>(
-                                        
                                         <p className={styles.pages} onClick={() => pagination(pages)}>{pages}</p>
                                     ))}
                                 <img src={arrow} className={styles.arrow}/></div>
@@ -154,11 +165,11 @@ export default function PlayerPage(){
                         <div className={styles.playerpro}>선수 프로필</div>
                             <div className={styles.contentbox1}><img className={styles.profile} src={defaultimg}/>
                                 <div className={styles.textbox0}>
-                                    <div className={styles.FCname}></div>
+                                    <div className={styles.FCname}>{playerDetail['user_name']}</div>
                                     <div className={styles.textbox}>
-                                        <div className={styles.text}><p className={styles.text3}>키</p><p className={styles.text4}>{data['player_height']}</p></div>
-                                        <div className={styles.text}><p className={styles.text3}>몸무게</p><p className={styles.text4}>{data['player_weight']}kg</p></div>
-                                        <div className={styles.text}><p className={styles.text3}>주발</p><p className={styles.text4}>{data['player_foot']}</p></div>
+                                        <div className={styles.text}><p className={styles.text3}>키</p><p className={styles.text4}>{playerDetail['player_height']}</p></div>
+                                        <div className={styles.text}><p className={styles.text3}>몸무게</p><p className={styles.text4}>{playerDetail['player_weight']}kg</p></div>
+                                        <div className={styles.text}><p className={styles.text3}>주발</p><p className={styles.text4}>{playerDetail['player_foot']}</p></div>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +179,7 @@ export default function PlayerPage(){
                                     <div className={styles.positionbox}>
                                         <div className={styles.position}></div>
                                         <div className={styles.contentbox3}><p className={styles.about}>연령/성별</p><p className={styles.about}>등번호</p><p className={styles.about}>골</p><p className={styles.about}>어시스트</p><p className={styles.about}>출전경기</p><p className={styles.about}>경기참여율</p><p className={styles.about}>성실포인트</p></div>
-                                        <div className={styles.contentbox4}><p className={styles.inform}>{data['age']}</p><p className={styles.inform}>7</p><p className={styles.inform}>{data['player_goal']}</p><p className={styles.inform}>{data['player_assist']}</p><p className={styles.inform}>2</p><p className={styles.inform}>50%</p><p className={styles.inform}>{data['player_point']}</p></div>
+                                        <div className={styles.contentbox4}><p className={styles.inform}>{playerDetail['age']}</p><p className={styles.inform}>7</p><p className={styles.inform}>{playerDetail['player_goal']}</p><p className={styles.inform}>{playerDetail['player_assist']}</p><p className={styles.inform}>2</p><p className={styles.inform}>50%</p><p className={styles.inform}>{playerDetail['player_point']}</p></div>
                                     </div>
                                 </div>
                             </div>
